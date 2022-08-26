@@ -1,0 +1,34 @@
+<!-- Name:string,
+    Description:string,
+    SkillsRequired:string[], 
+    StartDate:string,
+    EndDate:string,
+    Numberoftechnologistsrequired:number -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="Name">Activity Name</label>
+        <input type="text" formControlName="Name" >
+        <small *ngIf="form.controls.Name.touched && form.controls.Name.invalid">The Input Is Invalid</small>
+    </div>
+    <div>
+        <label for="Description">Activity Description</label>
+        <textarea type="text" formControlName="Description" ></textarea>
+    </div>
+    <div>
+        <label for="SkillsRequired">Activity Skills Required</label>
+        <input type="text" formControlName="SkillsRequired" >
+    </div>
+    <div>
+        <label for="StartDate">Activity Start Date</label>
+        <input type="text" formControlName="StartDate" >
+    </div>
+    <div>
+        <label for="EndDate">Activity End Date</label>
+        <input type="text" formControlName="EndDate" >
+    </div>
+    <div>
+        <label for="Numberoftechnologistsrequired">Number Of Technologists Required</label>
+        <input type="number" formControlName="Numberoftechnologistsrequired" >
+    </div>
+    <button type="submit">Submit</button>
+</form>

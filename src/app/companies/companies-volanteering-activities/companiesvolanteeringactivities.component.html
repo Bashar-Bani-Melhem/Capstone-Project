@@ -1,0 +1,30 @@
+<!-- <div class="activity" *ngFor="let activity of activities">   
+        <h1>Activity Name : <span>{{activity.Name}}</span></h1>
+        <h3>Requirment Skills : <span>{{activity.SkillsRequired}}</span></h3>
+        <h3>Start Date : <span>{{activity.StartDate}}</span></h3>
+        <h3>End Date : <span>{{activity.EndDate}}</span></h3>
+        <div class="details_btn">
+        <a class="details" routerLink="/companies/companyActivities/{{activity.id}}">Details</a>
+        </div>
+</div> -->
+<body>
+        <div class="container">
+            <div class="card" *ngFor="let activity of activities">
+                <div class="face face1">
+                    <div class="content">
+                        <h3>{{activity.Name}}</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>Requirment Skills : {{activity.SkillsRequired}}</p>
+                        <p>Start Date : {{activity.StartDate}}</p>
+                        <p>End Date : {{activity.EndDate}}</p>
+                        
+                            <a  routerLink="/companies/companyActivities/{{activity.id}}">Read More</a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </body>

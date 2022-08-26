@@ -1,0 +1,23 @@
+.registerHeader{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.registerBtn{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    margin: 1rem;
+    margin-left: 6vw;
+}
+.registerBtn:active,.registerBtn:visited{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.registerBtn:hover{
+    text-decoration: none;
+    color: #eea47fff;
+    font-size: large;
+    font-weight: bold;
+}

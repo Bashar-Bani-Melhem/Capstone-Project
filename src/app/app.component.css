@@ -1,0 +1,46 @@
+.header{
+    display: flex;
+    background-color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    height: 14vh;
+    width: 9vw;
+}
+.item2 ul{
+    display: flex;
+    list-style: none;
+}
+.item2 ul li{
+    margin:2vw;
+}
+.about:link,.why:link,.opp:link,.loginBtn:link,.signupBtn:link{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.about:visited,.why:visited,.opp:visited,.loginBtn:visited,.signupBtn:visited{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.about:hover,.why:hover,.opp:hover,.loginBtn:hover,.signupBtn:hover{
+    text-decoration: none;
+    color: #eea47fff;
+    font-size: large;
+    font-weight: bold;
+}
+.item3{
+    display: flex;
+    flex-direction: column;
+}
+.loginBtn,.signupBtn{
+    background-color:black ;
+    border: 0;
+    margin: 10px;
+    
+}
+

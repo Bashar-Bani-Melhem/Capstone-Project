@@ -1,0 +1,22 @@
+.companyHeader{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.companyHeaderBtn{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    margin: 1rem;
+}
+.companyHeaderBtn:active,.companyHeaderBtn:visited{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.companyHeaderBtn:hover{
+    text-decoration: none;
+    color: #eea47fff;
+    font-size: large;
+    font-weight: bold;
+}

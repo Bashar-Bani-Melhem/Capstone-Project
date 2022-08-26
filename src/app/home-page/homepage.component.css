@@ -1,0 +1,10 @@
+.homeContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.volunteerImg{
+    height: 50vh;
+    width: 70vw;
+}

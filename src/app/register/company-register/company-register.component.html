@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Company Name</label>
+        <input type="text" formControlName="name" >
+        <small *ngIf="form.controls.name.touched && form.controls.name.invalid">The Input Is Invalid</small>
+    </div>
+    <div>
+        <label for="email">Email Address</label>
+        <input type="email" formControlName="email" >
+    </div>
+    <div>
+        <label for="phone">Phone Number</label>
+        <input type="number" formControlName="phone" >
+    </div>
+    <div>
+        <label for="password">password</label>
+        <input type="text" formControlName="password" >
+    </div>
+    <div>
+        <label for="logo">Company Logo URL</label>
+        <input type="text" formControlName="logo" >
+    </div>
+    <label for="companyType">Enter Your Company Type:</label>
+
+    <div id="companyType">
+        <input type="radio" id="NGO" value="NGO" formControlName="type" >
+        <label for="NGO">NGO</label>
+        <input type="radio" id="Government" value="Government" formControlName="type" >
+        <label for="Government">Government</label>
+        <input type="radio" id="Religious" value="Religious" formControlName="type" >
+        <label for="Religious">Religious</label>
+    </div>
+
+    <div>
+        <label for="companyURL">Company Logo URL</label>
+        <input type="url" formControlName="companyURL" >
+    </div>
+    <button type="submit">Submit</button>
+</form>
