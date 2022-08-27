@@ -16,6 +16,13 @@ import { CompanyRegisterComponent } from './register/company-register/company-re
 import { VolunteerRegisterComponent } from './register/volunteer-register/volunteer-register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostVolunteeringActivityComponent } from './companies/post-volunteering-activity/post-volunteering-activity.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatInputModule } from '@angular/material/input'
+import {MatTabsModule} from '@angular/material/tabs';
+
 const routes : Route[]=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'contact',component:ContactusComponent},
@@ -50,13 +57,21 @@ const routes : Route[]=[
     RegisterComponent,
     CompanyRegisterComponent,
     VolunteerRegisterComponent,
-    PostVolunteeringActivityComponent
+    PostVolunteeringActivityComponent,
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatChipsModule, 
+    MatInputModule,
+    MatTabsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

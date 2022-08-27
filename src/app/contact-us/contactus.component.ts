@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 
 @Component({
@@ -7,8 +8,14 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
-
-  constructor(private router:Router) { }
+  form=this.fb.group({
+    Name:this.fb.control('',Validators.required),
+    email:this.fb.control('',Validators.required),
+    phone:this.fb.control('',Validators.required),
+    massage:this.fb.control('',Validators.required),
+   
+  })
+  constructor(private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
   }

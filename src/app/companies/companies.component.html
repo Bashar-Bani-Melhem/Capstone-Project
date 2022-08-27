@@ -1,8 +1,29 @@
-<div class="companyHeader">
+<!-- <div class="companyHeader">
     <a class="companyHeaderBtn" routerLink="/companies/companyProfile">Company Profile</a>
     <a class="companyHeaderBtn" routerLink="/companies/companyActivities">Company Activities</a>
-    <a class="companyHeaderBtn" routerLink="/companies/postNewActivity">Post New Avtivity</a>
-</div>
+    <a class="companyHeaderBtn" routerLink="/companies/postNewActivity">Post New Activity</a>
+</div> -->
+<!-- <mat-tab-group>
+    <mat-tab-nav-panel label="Profile" (click)="onProfile" >  </mat-tab-nav-panel>
+    <mat-tab label="Activities" (click)="onActivities">  </mat-tab>
+    <mat-tab label="Post New Activity" (click)="onPost"> </mat-tab>
+  </mat-tab-group>
 <div>
     <router-outlet></router-outlet>
-</div>
+</div> -->
+<nav mat-tab-nav-bar mat-align-tabs="center">
+    <a mat-tab-link
+       routerLink="/companies/companyProfile">
+      Company Profile
+    </a>
+    <a mat-tab-link
+       routerLink="/companies/companyActivities">
+      Company Activities
+    </a>
+    <a mat-tab-link
+       routerLink="/companies/postNewActivity">
+      Post New Activity
+    </a>
+  </nav>
+  
+  <router-outlet></router-outlet>

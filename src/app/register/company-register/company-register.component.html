@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
         <label for="name">Company Name</label>
         <input type="text" formControlName="name" >
@@ -36,4 +36,70 @@
         <input type="url" formControlName="companyURL" >
     </div>
     <button type="submit">Submit</button>
+</form> -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>REGISTER AS COMPANY</h1>
+    <div>
+        
+        <!-- <input type="text" formControlName="Name" >  -->
+        <mat-form-field MatFormControlName>
+            <mat-label for="name">Company Name</mat-label>
+            <input color="primary" matInput placeholder="Input" type="text" formControlName="name">
+            <mat-error *ngIf="form.controls.name.touched && form.controls.name.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <small *ngIf=""></small>
+    </div>
+    <div>
+        <mat-form-field>
+        <mat-label for="email">Email Address</mat-label>
+        <input color="primary" matInput placeholder="Input" type="text" formControlName="email">
+        <mat-error *ngIf="form.controls.email.touched && form.controls.email.invalid">The Input Is Invalid</mat-error>
+        </mat-form-field>
+        <!-- <textarea type="text" formControlName="Description" ></textarea> -->
+    </div>
+    <div>
+        <mat-form-field>
+        <mat-label for="phone">Phone Number</mat-label>
+            <input matInput placeholder="Input" type="number" formControlName="phone">
+            <mat-error *ngIf="form.controls.phone.touched && form.controls.phone.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <!-- <input type="text" formControlName="SkillsRequired" > -->
+    </div>
+    <div>
+        
+        <mat-form-field>
+            <mat-label for="password">Password</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="password">
+            <mat-error *ngIf="form.controls.password.touched && form.controls.password.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <!-- <input type="text" formControlName="StartDate" > -->
+    </div>
+    <div>
+        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
+        <!-- <input type="text" formControlName="EndDate" > -->
+        <mat-form-field>
+            <mat-label for="logo">Company Logo URL</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="logo">
+            <mat-error *ngIf="form.controls.logo.touched && form.controls.logo.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    <div>
+        
+        <!-- <input type="number" formControlName="Numberoftechnologistsrequired" > -->
+        <mat-form-field>
+            <mat-label for="type">Enter Your Company Type:</mat-label>
+            <input matInput type="text" placeholder="Input" formControlName="type">
+            <mat-error *ngIf="form.controls.type.touched && form.controls.type.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    <div>
+        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
+        <!-- <input type="text" formControlName="EndDate" > -->
+        <mat-form-field>
+            <mat-label for="companyURL">Company Logo URL</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="companyURL">
+            <mat-error *ngIf="form.controls.companyURL.touched && form.controls.companyURL.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    <button type="submit"><mat-icon>send</mat-icon></button>
 </form>

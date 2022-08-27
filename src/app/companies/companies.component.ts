@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-companies',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompaniesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  onProfile(){
+    this.router.navigate(['/companies/companyProfile'])
+  }
+  onActivities(){
+    this.router.navigate(['/companies/companyActivities'])
+  }
+  onPost(){
+    
+    this.router.navigate(['/companies/postNewActivity'])
+  }
 }

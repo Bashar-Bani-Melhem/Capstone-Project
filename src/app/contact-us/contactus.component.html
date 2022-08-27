@@ -1,4 +1,4 @@
-<main>
+<!-- <main>
 <div class="contactUs">
     <h1>Contact Us</h1>
     <label for="name">Enter Your Name : </label>
@@ -11,4 +11,45 @@
     <textarea class="massage" type="email"></textarea>
     <button class="submitbtn" (click)="onSubmit()">Submit</button>
 </div>
-</main>
+</main> -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>CONTACT US</h1>
+    <div>
+        
+        <!-- <input type="text" formControlName="Name" >  -->
+        <mat-form-field MatFormControlName>
+            <mat-label for="Name">Enter Your Name</mat-label>
+            <input color="primary" matInput placeholder="Input" type="text" formControlName="Name">
+            <mat-error *ngIf="form.controls.Name.touched && form.controls.Name.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <small *ngIf=""></small>
+    </div>
+    <div>
+        <mat-form-field>
+        <mat-label for="email">Enter Your Email</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="email">
+            <mat-error *ngIf="form.controls.email.touched && form.controls.email.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <!-- <input type="text" formControlName="SkillsRequired" > -->
+    </div>
+    <div>
+        
+        <mat-form-field>
+            <mat-label for="phone">Enter Your Phone Number</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="phone">
+            <mat-error *ngIf="form.controls.phone.touched && form.controls.phone.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <!-- <input type="text" formControlName="StartDate" > -->
+    </div>
+    <div>
+        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
+        <!-- <input type="text" formControlName="EndDate" > -->
+        <mat-form-field>
+            <mat-label for="massage">Enter Your Massage</mat-label>
+            <textarea matNativeControl type="text" formControlName="massage"></textarea>
+            <mat-error *ngIf="form.controls.massage.touched && form.controls.massage.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    
+    <button type="submit"><mat-icon>send</mat-icon></button>
+</form>

@@ -1,34 +1,58 @@
-<!-- Name:string,
-    Description:string,
-    SkillsRequired:string[], 
-    StartDate:string,
-    EndDate:string,
-    Numberoftechnologistsrequired:number -->
+
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>POST NEW ACTIVITY</h1>
     <div>
-        <label for="Name">Activity Name</label>
-        <input type="text" formControlName="Name" >
-        <small *ngIf="form.controls.Name.touched && form.controls.Name.invalid">The Input Is Invalid</small>
+        
+        <!-- <input type="text" formControlName="Name" >  -->
+        <mat-form-field MatFormControlName>
+            <mat-label for="Name">Activity Name</mat-label>
+            <input color="primary" matInput placeholder="Input" type="text" formControlName="Name">
+            <mat-error *ngIf="form.controls.Name.touched && form.controls.Name.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <small *ngIf=""></small>
     </div>
     <div>
-        <label for="Description">Activity Description</label>
-        <textarea type="text" formControlName="Description" ></textarea>
+        <mat-form-field>
+        <mat-label for="Description">Activity Description</mat-label>
+        <textarea matNativeControl type="text" formControlName="Description"></textarea>
+        <mat-error *ngIf="form.controls.Description.touched && form.controls.Description.invalid">The Input Is Invalid</mat-error>
+        </mat-form-field>
+        <!-- <textarea type="text" formControlName="Description" ></textarea> -->
     </div>
     <div>
-        <label for="SkillsRequired">Activity Skills Required</label>
-        <input type="text" formControlName="SkillsRequired" >
+        <mat-form-field>
+        <mat-label for="SkillsRequired">Activity Skills Required</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="SkillsRequired">
+            <mat-error *ngIf="form.controls.SkillsRequired.touched && form.controls.SkillsRequired.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <!-- <input type="text" formControlName="SkillsRequired" > -->
     </div>
     <div>
-        <label for="StartDate">Activity Start Date</label>
-        <input type="text" formControlName="StartDate" >
+        
+        <mat-form-field>
+            <mat-label for="StartDate">Activity Start Date</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="StartDate">
+            <mat-error *ngIf="form.controls.StartDate.touched && form.controls.StartDate.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        <!-- <input type="text" formControlName="StartDate" > -->
     </div>
     <div>
-        <label for="EndDate">Activity End Date</label>
-        <input type="text" formControlName="EndDate" >
+        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
+        <!-- <input type="text" formControlName="EndDate" > -->
+        <mat-form-field>
+            <mat-label for="EndDate">Activity End Date</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="EndDate">
+            <mat-error *ngIf="form.controls.EndDate.touched && form.controls.EndDate.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
     </div>
     <div>
-        <label for="Numberoftechnologistsrequired">Number Of Technologists Required</label>
-        <input type="number" formControlName="Numberoftechnologistsrequired" >
+        
+        <!-- <input type="number" formControlName="Numberoftechnologistsrequired" > -->
+        <mat-form-field>
+            <mat-label for="Numberoftechnologistsrequired">Number Of Technologists Required</mat-label>
+            <input matInput type="number" placeholder="Input" formControlName="Numberoftechnologistsrequired">
+            <mat-error *ngIf="form.controls.Numberoftechnologistsrequired.touched && form.controls.Numberoftechnologistsrequired.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit"><mat-icon>send</mat-icon></button>
 </form>
