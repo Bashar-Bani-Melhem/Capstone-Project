@@ -7,6 +7,7 @@ import { from } from 'rxjs';
 })
 export class AuthService {
   userState$=this.fireAuth.authState;
+  // id$=this.fireAuth.idToken;
   constructor(private fireAuth:AngularFireAuth) { 
 
   }

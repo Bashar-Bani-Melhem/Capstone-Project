@@ -1,26 +1,27 @@
-
-  <div class="container"*ngIf="companyserves.userState$ | async as company" >
+<!-- companyserves.userState$ | async as  -->
+<!-- *ngIf="companyserves.userState$ | async as company" -->
+  <div class="container" *ngIf="companyserves.userState$ | async as company">
     <div class="cover-photo">
-        <h1 class="welcome-statment">Welcome to {{company.CompanyName}} company Profile</h1> 
-         CompanyName 
+        <h1 class="welcome-statment">Welcome to {{CompanyName}} company Profile</h1> 
+          
       <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
     </div>
     <div class="profile-name">
-        <h2>{{company}} Company</h2>
-          CompanyName
-        <h4>{{company}} Company</h4>
-         Type 
+        <h2>{{CompanyName}} Company</h2>
+          
+        <h4>{{Type}} Company</h4>
+         
     </div>
-    <p class="about">{{company}} company is a {{company}} company Which provides various services to the local and global community</p>
-      CompanyName Type
-    <p class="about"> Email Address: {{company}}<br>
-        EmailAddress
-        Phone Number: {{company}}<br>
-         PhoneNumber
-        Website: {{company}}</p>
-        websiteURL
+    <p class="about">{{CompanyName}} company is a {{Type}} company Which provides various services to the local and global community</p>
+     
+    <p class="about"> Email Address: {{EmailAddress}}<br>
+        
+        Phone Number: {{PhoneNumber}}<br>
+       
+        Website: {{WebsiteURL}}</p>
+       <a>Edit Profile</a>
   </div>
-  <!-- <mat-card class="example-card">
+  <!-- <mat-card class="example-card" *ngIf="companyserves.userState$ | async as company">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>Shiba Inu</mat-card-title>

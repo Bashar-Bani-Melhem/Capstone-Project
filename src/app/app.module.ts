@@ -23,6 +23,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatInputModule } from '@angular/material/input'
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -43,6 +44,8 @@ import { AllCompaniesComponent } from './volunteer/all-companies/all-companies.c
 import { CompanyDetailsComponent } from './volunteer/company-details/company-details.component';
 import { AllVolunteersComponent } from './companies/all-volunteers/all-volunteers.component';
 import { VolunteersDetailsComponent } from './companies/volunteers-details/volunteers-details.component';
+import { NotloggedGuard } from './services/notlogged.guard';
+import { HotToastModule } from '@ngneat/hot-toast';
 // import { HttpClientModule } from '@angular/common/http';
 const routes : Route[]=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -66,7 +69,7 @@ const routes : Route[]=[
     {path:'allCompanies/:id', component: CompanyDetailsComponent},
     {path:'allActivities',component:AllActivitiesComponent},
   ]},
-  {path:'register',component:RegisterComponent,children:[
+  {path:'register',component:RegisterComponent,canActivate:[NotloggedGuard],children:[
     {path:'',redirectTo:'volunteerRegister',pathMatch:'full'},
     {path:'volunteerRegister', component:VolunteerRegisterComponent},
     {path:'companyRegister', component:CompanyRegisterComponent},
@@ -106,6 +109,7 @@ const routes : Route[]=[
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatSelectModule,
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
@@ -115,6 +119,7 @@ const routes : Route[]=[
     MatInputModule,
     MatTabsModule,
     MatCardModule,
+    HotToastModule.forRoot(),
     
     
 
