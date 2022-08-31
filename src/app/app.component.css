@@ -17,30 +17,33 @@
 .item2 ul li{
     margin:2vw;
 }
-.about:link,.why:link,.opp:link,.loginBtn:link,.signupBtn:link{
+.about:link,.why:link,.opp:link,.loginBtn:link,.signupBtn:link,.logoutBtn:link{
     text-decoration: none;
     color: white;
     font-size: large;
 }
-.about:visited,.why:visited,.opp:visited,.loginBtn:visited,.signupBtn:visited{
+.about:visited,.why:visited,.opp:visited,.loginBtn:visited,.signupBtn:visited,.logoutBtn:visited{
     text-decoration: none;
     color: white;
     font-size: large;
 }
-.about:hover,.why:hover,.opp:hover,.loginBtn:hover,.signupBtn:hover{
+.about:hover,.why:hover,.opp:hover,.loginBtn:hover,.signupBtn:hover,.logoutBtn{
     text-decoration: none;
     color: #eea47fff;
     font-size: large;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
+
 .item3{
     display: flex;
     flex-direction: column;
 }
-.loginBtn,.signupBtn{
+.loginBtn,.signupBtn.logoutBtn{
     background-color:black ;
+    color: white;
     border: 0;
     margin: 10px;
+    font-size: 18px;
     
 }
 

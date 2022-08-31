@@ -1,5 +1,5 @@
 export interface Company{
-  id:number,
+    id?:string,
     EmailAddress:string,
     Password:string,
     Logo:string, 

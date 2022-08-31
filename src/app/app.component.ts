@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'volunteerproject';
+  constructor(private router:Router,public authService:AuthService){
+
+  }
+  logout(){
+    this.authService.signOut().subscribe(()=>{
+      this.router.navigate(['home'])
+    });
+  }
 }

@@ -22,26 +22,57 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatInputModule } from '@angular/material/input'
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
+// import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+// import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import{getFirestore, provideFirestore}from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './services/auth.guard';
+import { VolunteerComponent } from './volunteer/volunteer.component';
+import { VolunteerProfileComponent } from './volunteer/volunteer-profile/volunteer-profile.component';
+import { AllActivitiesComponent } from './volunteer/all-activities/all-activities.component';
+import { AllCompaniesComponent } from './volunteer/all-companies/all-companies.component';
+import { CompanyDetailsComponent } from './volunteer/company-details/company-details.component';
+import { AllVolunteersComponent } from './companies/all-volunteers/all-volunteers.component';
+import { VolunteersDetailsComponent } from './companies/volunteers-details/volunteers-details.component';
+// import { HttpClientModule } from '@angular/common/http';
 const routes : Route[]=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'contact',component:ContactusComponent},
   {path:'successStories',component:SuccessstoriesComponent},
   {path:'home',component:HomepageComponent},
   {path:'about',component:AboutusComponent},
-  {path:'companies',component:CompaniesComponent,children:[
+  {path:'companies',component:CompaniesComponent,canActivate:[AuthGuard],children:[
     {path:'',redirectTo:'companyProfile',pathMatch:'full'},
     {path:'companyActivities', component:CompaniesvolanteeringactivitiesComponent},
     {path:'companyActivities/:id', component: ActivityDetailsComponent},
     {path:'companyProfile',component:CompanyProfileComponent},
     {path:'postNewActivity',component:PostVolunteeringActivityComponent},
+    {path:'allVolunteers',component:AllVolunteersComponent},
+    {path:'allVolunteers/:id',component:VolunteersDetailsComponent }
+  ]},
+  {path:'volunteer',component:VolunteerComponent,canActivate:[AuthGuard],children:[
+    {path:'',redirectTo:'volunteerProfile',pathMatch:'full'},
+    {path:'volunteerProfile', component:VolunteerProfileComponent},
+    {path:'allCompanies',component:AllCompaniesComponent},
+    {path:'allCompanies/:id', component: CompanyDetailsComponent},
+    {path:'allActivities',component:AllActivitiesComponent},
   ]},
   {path:'register',component:RegisterComponent,children:[
     {path:'',redirectTo:'volunteerRegister',pathMatch:'full'},
     {path:'volunteerRegister', component:VolunteerRegisterComponent},
     {path:'companyRegister', component:CompanyRegisterComponent},
-
-  ]}
+    
+  ]},
+  {path:'login',component:LoginComponent}
 ]
 @NgModule({
   declarations: [
@@ -58,6 +89,14 @@ const routes : Route[]=[
     CompanyRegisterComponent,
     VolunteerRegisterComponent,
     PostVolunteeringActivityComponent,
+    LoginComponent,
+    VolunteerComponent,
+    VolunteerProfileComponent,
+    AllActivitiesComponent,
+    AllCompaniesComponent,
+    CompanyDetailsComponent,
+    AllVolunteersComponent,
+    VolunteersDetailsComponent,
     
   ],
   imports: [
@@ -68,9 +107,16 @@ const routes : Route[]=[
     BrowserAnimationsModule,
     MatIconModule,
     MatFormFieldModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    // provideFirestore(()=>getFirestore()),
+    AngularFireAuthModule,
     MatChipsModule, 
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    
+    
 
   ],
   providers: [],

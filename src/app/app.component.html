@@ -8,8 +8,15 @@
       </ul>
   </div>
   <div class="item item3">
-    <a routerLink="#" class="loginBtn">Log In</a>
+     
+    <a class="logoutBtn" *ngIf="authService.userState$ | async;else loginBtn" (click)="logout()">Log Out</a> 
+    <ng-template #loginBtn>
+    <a routerLink="login" class="loginBtn">Log In</a>
     <a routerLink="register" class="signupBtn">Sign Up</a>
+    </ng-template>
+    
+    
+   
   </div>
   </header>
   <div class="mainPage">
