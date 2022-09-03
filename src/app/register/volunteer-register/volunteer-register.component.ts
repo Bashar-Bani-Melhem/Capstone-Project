@@ -35,7 +35,7 @@ export class VolunteerRegisterComponent implements OnInit {
 
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  skills: string[] = [ 'Lemon',  'Lime',  'Apple'];
+  skills: string[] = [ 'PHP',  'HTML',  'CSS'];
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();

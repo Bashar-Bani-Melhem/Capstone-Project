@@ -1,0 +1,31 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0,128,128);
+    font-size: 1.1rem;
+    height: 160vh;
+}
+mat-form-field{
+    width: 25rem;
+    font-size: 1.3rem;
+}
+button{
+    align-self: flex-end;
+    padding-right: 10vw;
+    border: none;
+    background-color: rgb(0,128,128);
+    
+}
+mat-icon{
+    height: 7rem;
+    width: 7rem;
+    font-size: 5rem;
+}
+mat-icon:hover{
+    font-size: 6rem;
+}
+.mat-input-elemant{
+    color: white;
+}

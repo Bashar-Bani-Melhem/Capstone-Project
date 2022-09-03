@@ -1,9 +1,9 @@
-export interface activity{
-    id?:number
+export interface Activity{
+    id?:string,
     Name:string,
     Description:string,
-    SkillsRequired:string, 
+    SkillsRequired:string[]|null|undefined, 
     StartDate:string,
     EndDate:string,
-    Numberoftechnologistsrequired:number
+    Numberoftechnologistsrequired:number|null|undefined
 }

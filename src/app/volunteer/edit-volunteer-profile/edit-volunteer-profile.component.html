@@ -1,0 +1,104 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>EDIT VOLUNTEER PRFILE</h1>
+    <div>
+        
+        <!-- <input type="text" formControlName="Name" >  -->
+        <mat-form-field MatFormControlName>
+            <mat-label for="fullName">Full Name</mat-label>
+            <input color="primary" matInput placeholder="Input" type="text" formControlName="fullName">
+            <mat-error *ngIf="form.controls.fullName.touched && form.controls.fullName.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <span matPrefix>+962 &nbsp;</span>
+            <input type="number" matInput placeholder="77-7777-777" formControlName="phoneNumber">
+            <mat-error *ngIf="form.controls.phoneNumber.touched && form.controls.phoneNumber.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+        
+    </div>
+    <div>
+        <h4>Select Your City</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Cities</mat-label>
+          <select matNativeControl required formControlName="city">
+            <option value="Irbid">Irbid</option>
+            <option value="Mafraq">Mafraq</option>
+            <option value="Jerash">Jerash</option>
+            <option value="Ajloun">Ajloun</option>
+            <option value="Amman">Amman</option>
+            <option value="Al-Zarqa">Al-Zarqa</option>
+            <option value="AL-Balqa">AL-Balqa</option>
+            <option value="Madaba">Madaba</option>
+            <option value="Al-Karak">Al-Karak</option>
+            <option value="Al-Tafilah">Al-Tafilah</option>
+            <option value="Maan">Maan</option>
+            <option value="Aqaba">Aqaba</option>
+          </select>
+          <mat-error *ngIf="form.controls.city.touched && form.controls.city.invalid">The Input Is Invalid</mat-error>
+        </mat-form-field>
+    </div>
+        <div>
+            <mat-form-field class="example-chip-list" appearance="fill">
+                <mat-label>Skills</mat-label>
+                <mat-chip-list #chipList aria-label="Skills selection">
+                  <mat-chip *ngFor="let skill of skills" (removed)="remove(skill)" >
+                    {{skill}}
+                    <button matChipRemove>
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input placeholder="New Skill..."
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)" formControlName="skills">
+                <mat-error *ngIf="form.controls.skills.touched && form.controls.skills.invalid">The Input Is Invalid</mat-error>
+
+                </mat-chip-list>
+              </mat-form-field>
+        </div>
+
+
+
+
+
+
+        <div>
+        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
+        <!-- <input type="text" formControlName="EndDate" > -->
+        <mat-form-field>
+            <mat-label for="jobExperiences">Job Experiences</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="jobExperiences">
+            <mat-error *ngIf="form.controls.jobExperiences.touched && form.controls.jobExperiences.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    
+        <!-- <input type="number" formControlName="Numberoftechnologistsrequired" > -->
+        <!-- <mat-form-field>
+            <mat-label for="Type">Enter Your Company Type:</mat-label>
+            <input matInput type="text" placeholder="Input" formControlName="Type">
+            <mat-error *ngIf="form.controls.Type.touched && form.controls.Type.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field> -->
+    
+    <div>
+        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
+        <!-- <input type="text" formControlName="EndDate" > -->
+        <mat-form-field>
+            <mat-label for="Courses">Courses</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="Courses">
+            <mat-error *ngIf="form.controls.Courses.touched && form.controls.Courses.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    <div>
+        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
+        <!-- <input type="text" formControlName="EndDate" > -->
+        <mat-form-field>
+            <mat-label for=" availableTimes"> Available times</mat-label>
+            <input matInput placeholder="Input" type="text" formControlName="availableTimes">
+            <mat-error *ngIf="form.controls.availableTimes.touched && form.controls.availableTimes.invalid">The Input Is Invalid</mat-error>
+          </mat-form-field>
+    </div>
+    <button type="submit"><mat-icon>send</mat-icon></button>
+</form>

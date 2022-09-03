@@ -49,6 +49,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
 import { EditCompanyProfileComponent } from './companies/edit-company-profile/edit-company-profile.component';
 import { CompanyLoginComponent } from './login/company-login/company-login.component';
 import { VolunteerLoginComponent } from './login/volunteer-login/volunteer-login.component';
+import { EditVolunteerProfileComponent } from './volunteer/edit-volunteer-profile/edit-volunteer-profile.component';
 // import { HttpClientModule } from '@angular/common/http';
 const routes : Route[]=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -72,6 +73,7 @@ const routes : Route[]=[
     {path:'allCompanies',component:AllCompaniesComponent},
     {path:'allCompanies/:id', component: CompanyDetailsComponent},
     {path:'allActivities',component:AllActivitiesComponent},
+    {path:'editProfile',component:EditVolunteerProfileComponent}
   ]},
   {path:'register',component:RegisterComponent,canActivate:[NotloggedGuard],children:[
     {path:'',redirectTo:'volunteerRegister',pathMatch:'full'},
@@ -111,6 +113,7 @@ const routes : Route[]=[
     EditCompanyProfileComponent,
     CompanyLoginComponent,
     VolunteerLoginComponent,
+    EditVolunteerProfileComponent,
     
   ],
   imports: [

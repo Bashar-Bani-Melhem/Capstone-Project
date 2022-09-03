@@ -1,1 +1,37 @@
-<p>volunteer-profile works!</p>
+<div class="container" *ngIf="volunteerServes.userState$ | async as volunteer">
+    
+    <h1 class="welcome-statment">Welcome To {{fullName}} Volunteer Profile</h1> 
+      <div class="cover-photo" *ngIf="auth.userState$ | async as user">
+  <img 
+
+    [src]="user.photoURL ?? '../assets/images/profile-placeholder.jpg' " 
+  
+  class="profile">
+  <button (click)="inputFile.click()"><mat-icon>edit</mat-icon></button>
+  <input type="file" #inputFile accept="image/*" hidden (change)="submit($event)">
+</div>
+<div class="profile-name">
+    <h1>{{fullName}}</h1>  
+    
+     
+</div>
+<div class="about">
+<p >I'm happy to share my information with you </p>
+ </div>
+<div class="info"> 
+    <h2>Email Address: <p>{{emailAddress}}</p></h2>
+    
+    <h2>Phone Number:<p>+962 {{phoneNumber}}</p></h2>
+   
+    <h2>City: <p>{{city}}</p></h2>
+
+    <h2>skills:<p>{{skills}}</p></h2>
+
+    <h2>jobExperiences:<p>{{jobExperiences}}</p></h2>
+
+    <h2>Courses:<p>{{Courses}}</p></h2>
+
+    <h2>availableTimes:<p>{{availableTimes}}</p></h2>
+</div>
+   <a routerLink="../editProfile" class="edit">Edit Profile</a>
+</div>

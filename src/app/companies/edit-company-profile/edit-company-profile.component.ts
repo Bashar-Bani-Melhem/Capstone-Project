@@ -40,7 +40,7 @@ export class EditCompanyProfileComponent implements OnInit {
 
       )
     ).pipe(this.hot.observe({
-      loading: 'Updating User...',
+      loading: 'Updating Company Information...',
       success:'Successfully Updating',
       error:(error)=>'This Error Happend'+error
     }),

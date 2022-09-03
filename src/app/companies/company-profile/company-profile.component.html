@@ -13,19 +13,18 @@
       <input type="file" #inputFile accept="image/*" hidden (change)="submit($event)">
     </div>
     <div class="profile-name">
-        <h2>{{CompanyName}} Company</h2>
-          
+        <h2>{{CompanyName}} Company</h2>  
         <h4>{{Type}} Company</h4>
          
     </div>
     <p class="about">{{CompanyName}} company is a {{Type}} company Which provides various services to the local and global community</p>
      
-    <p class="about"> Email Address: {{EmailAddress}}<br>
+    <p class="info"> Email Address: {{EmailAddress}}<br>
         
-        Phone Number: {{PhoneNumber}}<br>
+        Phone Number:+962 {{PhoneNumber}}<br>
        
         Website: {{WebsiteURL}}</p>
-       <a routerLink="../editProfile">Edit Profile</a>
+       <a routerLink="../editProfile" class="edit">Edit Profile</a>
   </div>
   <!-- <mat-card class="example-card" *ngIf="companyserves.userState$ | async as company">
     <mat-card-header>

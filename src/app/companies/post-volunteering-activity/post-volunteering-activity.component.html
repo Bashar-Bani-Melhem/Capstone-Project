@@ -20,12 +20,24 @@
         <!-- <textarea type="text" formControlName="Description" ></textarea> -->
     </div>
     <div>
-        <mat-form-field>
-        <mat-label for="SkillsRequired">Activity Skills Required</mat-label>
-            <input matInput placeholder="Input" type="text" formControlName="SkillsRequired">
+        <mat-form-field class="example-chip-list" appearance="fill">
+            <mat-label>Skills</mat-label>
+            <mat-chip-list #chipList aria-label="Skills selection">
+              <mat-chip *ngFor="let skill of skills" (removed)="remove(skill)" >
+                {{skill}}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip>
+              <input placeholder="New Skill..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)" formControlName="SkillsRequired">
             <mat-error *ngIf="form.controls.SkillsRequired.touched && form.controls.SkillsRequired.invalid">The Input Is Invalid</mat-error>
+
+            </mat-chip-list>
           </mat-form-field>
-        <!-- <input type="text" formControlName="SkillsRequired" > -->
     </div>
     <div>
         
