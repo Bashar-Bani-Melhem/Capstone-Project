@@ -1,44 +1,5 @@
-<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div>
-        <label for="name">Company Name</label>
-        <input type="text" formControlName="name" >
-        <small *ngIf="form.controls.name.touched && form.controls.name.invalid">The Input Is Invalid</small>
-    </div>
-    <div>
-        <label for="email">Email Address</label>
-        <input type="email" formControlName="email" >
-    </div>
-    <div>
-        <label for="phone">Phone Number</label>
-        <input type="number" formControlName="phone" >
-    </div>
-    <div>
-        <label for="password">password</label>
-        <input type="text" formControlName="password" >
-    </div>
-    <div>
-        <label for="logo">Company Logo URL</label>
-        <input type="text" formControlName="logo" >
-    </div>
-    <label for="companyType">Enter Your Company Type:</label>
-
-    <div id="companyType">
-        <input type="radio" id="NGO" value="NGO" formControlName="type" >
-        <label for="NGO">NGO</label>
-        <input type="radio" id="Government" value="Government" formControlName="type" >
-        <label for="Government">Government</label>
-        <input type="radio" id="Religious" value="Religious" formControlName="type" >
-        <label for="Religious">Religious</label>
-    </div>
-
-    <div>
-        <label for="companyURL">Company Logo URL</label>
-        <input type="url" formControlName="companyURL" >
-    </div>
-    <button type="submit">Submit</button>
-</form> -->
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h1>REGISTER AS COMPANY</h1>
+    <h1>Edit Company Profile</h1>
     <div>
         
         <!-- <input type="text" formControlName="Name" >  -->
@@ -48,14 +9,6 @@
             <mat-error *ngIf="form.controls.CompanyName.touched && form.controls.CompanyName.invalid">The Input Is Invalid</mat-error>
           </mat-form-field>
         <small *ngIf=""></small>
-    </div>
-    <div>
-        <mat-form-field>
-        <mat-label for="EmailAddress">Email Address</mat-label>
-        <input color="primary" matInput placeholder="Input" type="text" formControlName="EmailAddress">
-        <mat-error *ngIf="form.controls.EmailAddress.touched && form.controls.EmailAddress.invalid">The Input Is Invalid</mat-error>
-        </mat-form-field>
-        <!-- <textarea type="text" formControlName="Description" ></textarea> -->
     </div>
     <div>
         <mat-form-field class="example-full-width" appearance="fill">
@@ -70,26 +23,6 @@
             <mat-error *ngIf="form.controls.PhoneNumber.touched && form.controls.PhoneNumber.invalid">The Input Is Invalid</mat-error>
           </mat-form-field> -->
         <!-- <input type="text" formControlName="SkillsRequired" > -->
-    </div>
-    <div>
-        
-        <mat-form-field>
-            <mat-label for="Password">Password</mat-label>
-            <input matInput placeholder="Input" type="password" formControlName="Password">
-            <mat-error *ngIf="form.controls.Password.touched && form.controls.Password.invalid">The Input Is Invalid</mat-error>
-          </mat-form-field>
-          
-        <!-- <input type="text" formControlName="StartDate" > -->
-    </div>
-    <div>
-        
-        <mat-form-field>
-            <mat-label for="confirmPassword">Confirm Password</mat-label>
-            <input matInput placeholder="Input" type="password" formControlName="confirmPassword">
-            <mat-error *ngIf="form.controls.confirmPassword.touched && form.controls.confirmPassword.invalid">The Input Is Invalid</mat-error>
-          </mat-form-field>
-          
-        <!-- <input type="text" formControlName="StartDate" > -->
     </div>
     <div>
         <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
@@ -126,8 +59,5 @@
             <mat-error *ngIf="form.controls.WebsiteURL.touched && form.controls.WebsiteURL.invalid">The Input Is Invalid</mat-error>
           </mat-form-field>
     </div>
-    <mat-error *ngIf="form.errors?.['passwoedDontMatch']">
-        Confirm Password Dont Match Entered Password
-    </mat-error>
     <button type="submit"><mat-icon>send</mat-icon></button>
 </form>

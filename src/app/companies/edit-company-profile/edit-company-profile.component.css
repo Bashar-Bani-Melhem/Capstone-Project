@@ -5,7 +5,7 @@ form{
     align-items: center;
     background-color: rgb(0,128,128);
     font-size: 1.1rem;
-    height: 190vh;
+    height: 120vh;
 }
 mat-form-field{
     width: 25rem;

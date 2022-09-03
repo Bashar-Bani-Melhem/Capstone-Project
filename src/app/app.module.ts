@@ -30,7 +30,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
-// import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 // import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 // import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import{getFirestore, provideFirestore}from '@angular/fire/firestore';
@@ -46,6 +46,9 @@ import { AllVolunteersComponent } from './companies/all-volunteers/all-volunteer
 import { VolunteersDetailsComponent } from './companies/volunteers-details/volunteers-details.component';
 import { NotloggedGuard } from './services/notlogged.guard';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { EditCompanyProfileComponent } from './companies/edit-company-profile/edit-company-profile.component';
+import { CompanyLoginComponent } from './login/company-login/company-login.component';
+import { VolunteerLoginComponent } from './login/volunteer-login/volunteer-login.component';
 // import { HttpClientModule } from '@angular/common/http';
 const routes : Route[]=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -60,7 +63,8 @@ const routes : Route[]=[
     {path:'companyProfile',component:CompanyProfileComponent},
     {path:'postNewActivity',component:PostVolunteeringActivityComponent},
     {path:'allVolunteers',component:AllVolunteersComponent},
-    {path:'allVolunteers/:id',component:VolunteersDetailsComponent }
+    {path:'allVolunteers/:id',component:VolunteersDetailsComponent },
+    {path:'editProfile',component:EditCompanyProfileComponent}
   ]},
   {path:'volunteer',component:VolunteerComponent,canActivate:[AuthGuard],children:[
     {path:'',redirectTo:'volunteerProfile',pathMatch:'full'},
@@ -75,7 +79,11 @@ const routes : Route[]=[
     {path:'companyRegister', component:CompanyRegisterComponent},
     
   ]},
-  {path:'login',component:LoginComponent}
+  {path:'login',component:LoginComponent,canActivate:[NotloggedGuard],children:[
+    {path:'',redirectTo:'volunteerLogin',pathMatch:'full'},
+    {path:'volunteerLogin',component:VolunteerLoginComponent},
+    {path:'companyLogin',component:CompanyLoginComponent}
+  ]}
 ]
 @NgModule({
   declarations: [
@@ -100,6 +108,9 @@ const routes : Route[]=[
     CompanyDetailsComponent,
     AllVolunteersComponent,
     VolunteersDetailsComponent,
+    EditCompanyProfileComponent,
+    CompanyLoginComponent,
+    VolunteerLoginComponent,
     
   ],
   imports: [
@@ -113,6 +124,7 @@ const routes : Route[]=[
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     // provideFirestore(()=>getFirestore()),
     AngularFireAuthModule,
     MatChipsModule, 

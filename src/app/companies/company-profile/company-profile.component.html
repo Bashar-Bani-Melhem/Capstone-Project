@@ -1,10 +1,16 @@
 <!-- companyserves.userState$ | async as  -->
 <!-- *ngIf="companyserves.userState$ | async as company" -->
   <div class="container" *ngIf="companyserves.userState$ | async as company">
-    <div class="cover-photo">
+    
         <h1 class="welcome-statment">Welcome to {{CompanyName}} company Profile</h1> 
-          
-      <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
+          <div class="cover-photo" *ngIf="auth.userState$ | async as user">
+      <img 
+
+        [src]="user.photoURL ?? '../assets/images/profile-placeholder.jpg' " 
+      
+      class="profile">
+      <button (click)="inputFile.click()"><mat-icon>edit</mat-icon></button>
+      <input type="file" #inputFile accept="image/*" hidden (change)="submit($event)">
     </div>
     <div class="profile-name">
         <h2>{{CompanyName}} Company</h2>
@@ -19,7 +25,7 @@
         Phone Number: {{PhoneNumber}}<br>
        
         Website: {{WebsiteURL}}</p>
-       <a>Edit Profile</a>
+       <a routerLink="../editProfile">Edit Profile</a>
   </div>
   <!-- <mat-card class="example-card" *ngIf="companyserves.userState$ | async as company">
     <mat-card-header>

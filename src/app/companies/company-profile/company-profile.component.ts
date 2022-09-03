@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatCardContent } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
 import { map, take } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 import { Company } from 'src/app/services/company';
 import { CompanyService } from 'src/app/services/company.service';
+import { PictureUploadService } from 'src/app/services/picture-upload.service';
 @Component({
   selector: 'app-company-profile',
   templateUrl: './company-profile.component.html',
@@ -14,18 +16,12 @@ export class CompanyProfileComponent implements OnInit {
   CompanyName?:string
   Type?:string
   EmailAddress?:string
-  PhoneNumber?:number
+  PhoneNumber?:number|null
   WebsiteURL?:string
   id?:string 
-  constructor(public companyserves:CompanyService, private route:ActivatedRoute ) {
+  constructor(public companyserves:CompanyService, public auth:AuthService,private uploadService:PictureUploadService ) {
     
     
-    // this.company=this.companyserves.getCompany().filter((value,index)=>{
-    //   return value.Logo == 'y';
-    // })[0];
-    // this.companyserves.get(1).subscribe((data)=>{
-    //   this.company=data;
-    // })
    }
 
   ngOnInit(): void {
@@ -39,21 +35,13 @@ export class CompanyProfileComponent implements OnInit {
         console.log(this.CompanyName)
       }
     })
-    // const idf= this.route.snapshot.paramMap.get('id');
-    // if(idf){
-    //   this.id=idf;
-    //   console.log(this.id) ;
-    // }
-    // this.companyserves.get(this.id+'').pipe(
-    //   take(1),map(value=>value as Company)
-    // ).subscribe((data)=>{
-    //   console.log(data);
-    //   this.company=data;
-    //   console.log(this.company);
-    // }
-    
-    // );
+   
       
+  }
+  submit(event:Event){
+    const input = <HTMLInputElement> event.target;
+    const obj= input?.files?.[0] as File;
+    this.uploadService.uploadImage(obj).subscribe()
   }
 
 }
