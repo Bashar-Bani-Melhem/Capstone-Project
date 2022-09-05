@@ -1,1 +1,10 @@
-<p>company-details works!</p>
+<div *ngIf="company"  class="companyDetails">
+     <h1>Name : <span>{{company.CompanyName}}</span></h1>
+     <h3>Type  : <span>{{company.Type }}</span></h3>
+     <h3>Email Address : <span>{{company.EmailAddress}}</span></h3>
+     <h3>Phone Number: <span>{{company.PhoneNumber}}</span></h3>
+     
+     <h3>Website URL : <span>{{company.WebsiteURL}}</span></h3>
+     
+     
+ </div>

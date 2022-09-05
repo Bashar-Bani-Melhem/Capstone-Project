@@ -1,13 +1,14 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { switchMap } from 'rxjs';
+import { switchMap, take } from 'rxjs';
 import { Activity } from 'src/app/services/activities';
 import { ActivitiesService } from 'src/app/services/activities.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-post-volunteering-activity',
@@ -18,6 +19,10 @@ export class PostVolunteeringActivityComponent implements OnInit {
   form=this.fb.group({
     Name:this.fb.control('',Validators.required),
     Description:this.fb.control('',Validators.required),
+    range:this.fb.group({
+      StartDate: new FormControl<Date|null>(null),
+      EndDate: new FormControl<Date|null>(null),
+     }),
     SkillsRequired:this.fb.control('',Validators.required),
     StartDate:this.fb.control('',Validators.required),
     EndDate:this.fb.control('',Validators.required),
@@ -26,35 +31,59 @@ export class PostVolunteeringActivityComponent implements OnInit {
   constructor(private fb:FormBuilder,private activityService:ActivitiesService,private router:Router,
     private auth:AuthService,
     private hot:HotToastService,
+    private companyService:CompanyService
     ) { }
 
   ngOnInit(): void {
   }
   onSubmit(){
-    this.auth.userState$.pipe(
-      switchMap((data)=>{
-        return this.activityService.create({
-         id:data?.uid,
-         Name:this.form.value.Name+'',
-         Description:this.form.value.Description+'',
-         SkillsRequired:this.skills, 
-         StartDate:this.form.value.StartDate+'',
-         EndDate:this.form.value.EndDate+'',
-         Numberoftechnologistsrequired:this.form.value.Numberoftechnologistsrequired,
-     })
+    this.companyService.userState$.pipe(take(1),switchMap((data)=>{
+      return this.activityService.create({
+        Name:this.form.value.Name+'',
+        companyId: data?.id,
+        companyName:data?.CompanyName,
+        companyType:data?.Type,
+        Description:this.form.value.Description+'',
+        SkillsRequired:this.skills,
+        Numberoftechnologistsrequired:this.form.value.Numberoftechnologistsrequired,
+        range:{... this.form.value.range},
       })
-    ).pipe(this.hot.observe({
-      loading: 'Creating Volunteering Activity...',
-      success:'Successfully Cerated',
-      error:(error)=>'This Error Happend'+error
-    }),
-    )
-    .subscribe({
-        next:()=>{
-        this.navgateToProfilePage();
+    })).pipe(this.hot.observe({
+        loading: 'Creating Volunteering Activity...',
+        success:'Successfully Cerated',
+        error:(error)=>'This Error Happend'+error
+      })).subscribe({
+          next:()=>{
+            console.log('created Dooooneeeeeeeee')
+          this.navgateToProfilePage();
+  
+          }  });
+    //  this.auth.userState$.pipe(take(1)).subscribe((user)=>{
+    //   if(user){
+    //     this.activityService.create({
+    //       Name:this.form.value.Name+'',
+    //       companyId: user.uid,
+    //       Description:this.form.value.Description+'',
+    //       SkillsRequired:this.skills,
+    //       Numberoftechnologistsrequired:this.form.value.Numberoftechnologistsrequired,
+    //       range:{... this.form.value.range},
+    //     })
+    //     .pipe(this.hot.observe({
+    //   loading: 'Creating Volunteering Activity...',
+    //   success:'Successfully Cerated',
+    //   error:(error)=>'This Error Happend'+error
+    // })).subscribe({
+    //     next:()=>{
+    //       console.log('created Dooooneeeeeeeee')
+    //     this.navgateToProfilePage();
 
-        }
-  });
+    //     }  });
+    //   }
+    // })
+    // 
+    // )
+    
+
      
   }
   navgateToProfilePage(){

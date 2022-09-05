@@ -41,20 +41,18 @@
     </div>
     <div>
         
-        <mat-form-field>
-            <mat-label for="StartDate">Activity Start Date</mat-label>
-            <input matInput placeholder="Input" type="text" formControlName="StartDate">
-            <mat-error *ngIf="form.controls.StartDate.touched && form.controls.StartDate.invalid">The Input Is Invalid</mat-error>
-          </mat-form-field>
-        <!-- <input type="text" formControlName="StartDate" > -->
-    </div>
-    <div>
-        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
-        <!-- <input type="text" formControlName="EndDate" > -->
-        <mat-form-field>
-            <mat-label for="EndDate">Activity End Date</mat-label>
-            <input matInput placeholder="Input" type="text" formControlName="EndDate">
-            <mat-error *ngIf="form.controls.EndDate.touched && form.controls.EndDate.invalid">The Input Is Invalid</mat-error>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input formGroupName ="range" [rangePicker]="picker">
+              <input matStartDate formControlName="StartDate" placeholder="Start date">
+              <input matEndDate formControlName="EndDate" placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          
+            <!-- <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+            <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error> -->
           </mat-form-field>
     </div>
     <div>

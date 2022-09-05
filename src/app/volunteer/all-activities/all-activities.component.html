@@ -1,1 +1,23 @@
-<p>all-activities works!</p>
+<!-- *ngIf="activityService.currentUserActivities$ | async as activities" -->
+<body>
+    <div class="container" >
+        <div class="card" *ngFor="let activity of Activities">
+            <div class="face face1">
+                <div class="content">
+                    <h3>{{activity.Name}}</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Requirment Skills : {{activity.SkillsRequired}}</p>
+                    <!-- <p *ngIf="activity.range">Start Date : {{activity.range.StartDate | date:'medium'}}</p>
+                    <p *ngIf="activity.range">End Date : {{activity.range.EndDate | date:'medium'}}</p> -->
+                    <p>Company Name : {{activity.companyName}}</p>
+                    <p>Company Type : {{activity.companyType}}</p>
+                    <a  routerLink="/volunteer/allActivities/{{activity.uid}}">Read More</a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</body>

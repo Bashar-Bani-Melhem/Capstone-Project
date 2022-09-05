@@ -24,6 +24,7 @@ import {MatInputModule } from '@angular/material/input'
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -50,6 +51,9 @@ import { EditCompanyProfileComponent } from './companies/edit-company-profile/ed
 import { CompanyLoginComponent } from './login/company-login/company-login.component';
 import { VolunteerLoginComponent } from './login/volunteer-login/volunteer-login.component';
 import { EditVolunteerProfileComponent } from './volunteer/edit-volunteer-profile/edit-volunteer-profile.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ApplyActivityComponent } from './volunteer/apply-activity/apply-activity.component';
+import { PastActivitiesComponent } from './volunteer/past-activities/past-activities.component';
 // import { HttpClientModule } from '@angular/common/http';
 const routes : Route[]=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -73,7 +77,9 @@ const routes : Route[]=[
     {path:'allCompanies',component:AllCompaniesComponent},
     {path:'allCompanies/:id', component: CompanyDetailsComponent},
     {path:'allActivities',component:AllActivitiesComponent},
-    {path:'editProfile',component:EditVolunteerProfileComponent}
+    {path:'editProfile',component:EditVolunteerProfileComponent},
+    {path:'allActivities/:id',component:ApplyActivityComponent},
+    {path:'pastActivity',component:PastActivitiesComponent}
   ]},
   {path:'register',component:RegisterComponent,canActivate:[NotloggedGuard],children:[
     {path:'',redirectTo:'volunteerRegister',pathMatch:'full'},
@@ -114,6 +120,8 @@ const routes : Route[]=[
     CompanyLoginComponent,
     VolunteerLoginComponent,
     EditVolunteerProfileComponent,
+    ApplyActivityComponent,
+    PastActivitiesComponent,
     
   ],
   imports: [
@@ -124,6 +132,9 @@ const routes : Route[]=[
     BrowserAnimationsModule,
     MatIconModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,

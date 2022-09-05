@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Activity } from 'src/app/services/activities';
+import { ActivitiesService } from 'src/app/services/activities.service';
 
 @Component({
   selector: 'app-all-activities',
@@ -6,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-activities.component.css']
 })
 export class AllActivitiesComponent implements OnInit {
-
-  constructor() { }
+  Activities?:Activity[]
+  constructor(public activityService:ActivitiesService) 
+  {
+    this.activityService.getAll().subscribe((data)=>{
+      this.Activities=data;
+    }) 
+  }
 
   ngOnInit(): void {
   }

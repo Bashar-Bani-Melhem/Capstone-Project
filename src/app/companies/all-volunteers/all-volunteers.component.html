@@ -1,1 +1,19 @@
-<p>all-volunteers works!</p>
+<body>
+    <div class="container" >
+        <div class="card" *ngFor="let volunteer of volunteers">
+            <div class="face face1">
+                <div class="content">
+                    <h3>{{volunteer.fullName}}</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Volunteer Skills : {{volunteer.skills}}</p>
+                    <p>Volunteer City : {{volunteer.city}}</p>
+                    <a  routerLink="/companies/allVolunteers/{{volunteer.id}}">Read More</a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</body>

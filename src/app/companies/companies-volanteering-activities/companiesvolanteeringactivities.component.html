@@ -7,8 +7,9 @@
         <a class="details" routerLink="/companies/companyActivities/{{activity.id}}">Details</a>
         </div>
 </div> -->
+<!-- --------------------------------------------------------------------------------- -->
 <body>
-        <div class="container">
+        <div class="container" *ngIf="activityService.currentUserActivities$ | async as activities">
             <div class="card" *ngFor="let activity of activities">
                 <div class="face face1">
                     <div class="content">
@@ -18,10 +19,10 @@
                 <div class="face face2">
                     <div class="content">
                         <p>Requirment Skills : {{activity.SkillsRequired}}</p>
-                        <p>Start Date : {{activity.StartDate}}</p>
-                        <p>End Date : {{activity.EndDate}}</p>
+                        <!-- <p *ngIf="activity.range">Start Date : {{activity.range.StartDate | date:'medium'}}</p>
+                        <p *ngIf="activity.range">End Date : {{activity.range.EndDate | date:'medium'}}</p> -->
                         
-                            <a  routerLink="/companies/companyActivities/{{activity.id}}">Read More</a>
+                        <a  routerLink="/companies/companyActivities/{{activity.uid}}">Read More</a>
                     </div>
                 </div>
             </div>

@@ -8,35 +8,50 @@ import { AuthService } from './auth.service';
 })
 export class ActivitiesService {
   private activitiesCollection: AngularFirestoreCollection<Activity>;
-  userState$ = this.authService.userState$.pipe(
-      switchMap((user)=> {
-          if(user){
-            return this.get(user.uid);
-          }
-          else {
-            return of(null);
-          }
-      })
+  currentUserActivities$:Observable<Activity[]|null|undefined>
+  // userState$ = this.authService.userState$.pipe(
+  //     switchMap((user)=> {
+  //         if(user){
+  //           return this.get(user.uid);
+  //         }
+  //         else {
+  //           return of(null);
+  //         }
+  //     })
 
-  )
+  // )
   constructor(private firestore:AngularFirestore, private authService : AuthService) 
   {
     this.activitiesCollection = this.firestore.collection('activities');
+    this.currentUserActivities$=this.authService.userState$.pipe(
+      switchMap((data)=>{
+        if(data){
+          return this.getCompanyActivities(data?.uid);
+        }
+        else{
+          return of(null)
+        }
+      })
+    )
   }
   getAll():Observable<Activity[]>{
-    return this.activitiesCollection.valueChanges() as Observable<Activity[]>;
+    return this.activitiesCollection.valueChanges({'idField':'uid'}) as Observable<Activity[]>;
   }
   get(id:string){
     return from(this.activitiesCollection.doc<Activity>(id).get()).pipe( map(activity => activity.data()));
 
   }
+  getCompanyActivities(companyId:string){
+   return this.firestore.collection('activities',ref=>ref.where('companyId','==',companyId))
+    .valueChanges({'idField':'uid'}) as Observable<Activity[]>;
+  }
   create(activity :Activity){
-    return from(this.activitiesCollection.doc(activity.id).set(activity));
+    return from(this.activitiesCollection.add(activity));
   }
   update(activity: Activity){
     // const docReference = doc(this.firestore, 'profiles/'+profile.id);
     // return updateDoc(docReference, {...profile});
-    return from(this.activitiesCollection.doc(activity.id).update({...activity}));
+    return from(this.activitiesCollection.doc().update({...activity}));
   }
 
   delete(id: string){

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { activity } from 'src/app/services/activities';
+import { Activity } from 'src/app/services/activities';
 import { ActivitiesService } from 'src/app/services/activities.service';
 
 @Component({
@@ -9,15 +9,20 @@ import { ActivitiesService } from 'src/app/services/activities.service';
   styleUrls: ['./activity-details.component.css']
 })
 export class ActivityDetailsComponent implements OnInit {
-  activity: activity;
-  constructor(private activityService: ActivitiesService, private route:ActivatedRoute ) {
-    const id= parseInt(this.route.snapshot.paramMap.get('id')as string); 
-    this.activity= activityService.getActivite().filter((value,index)=>{
-      return value.id == id;
-    })[0];
-  }
+  activity?: Activity;
+  constructor(public activityService: ActivitiesService, private route:ActivatedRoute ) {
+     
+    // this.activity= activityService.getAll().subscribe()
+    // filter((value,index)=>{
+    //   return value.id == id;
+    // })[0];
+   }
 
-  ngOnInit(): void {
-  }
+   ngOnInit(): void {
+    const id= this.route.snapshot.paramMap.get('id')as string;
+    this.activityService.get(id).subscribe((actvitiy)=> {
+      this.activity = actvitiy;
+    })
+   }
 
 }

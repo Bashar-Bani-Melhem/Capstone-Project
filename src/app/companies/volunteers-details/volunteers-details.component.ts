@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Volunteer } from 'src/app/services/volunteer';
+import { VolunteerService } from 'src/app/services/volunteer.service';
 
 @Component({
   selector: 'app-volunteers-details',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./volunteers-details.component.css']
 })
 export class VolunteersDetailsComponent implements OnInit {
-
-  constructor() { }
+  volunteer?:Volunteer
+  constructor( private route:ActivatedRoute,public volunteerService:VolunteerService) { }
 
   ngOnInit(): void {
+    const id= this.route.snapshot.paramMap.get('id')as string;
+    this.volunteerService.get(id).subscribe((volunteer)=> {
+      this.volunteer = volunteer;
+    })
   }
 
 }

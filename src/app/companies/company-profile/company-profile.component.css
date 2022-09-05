@@ -33,7 +33,7 @@
   .profile-name{
     font-size: 25px;
     font-weight: bold;
-    margin: 1vw 0 0 -45vw;
+    margin: 1vw 0 0 -40vw;
     border-top: 4px solid #eea47fff;
   }
   h2{
@@ -45,26 +45,33 @@
     font-size: x-large;
   }
   .info{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: start;
     margin-top: 7vh;
     line-height: 25px;
     font-size: x-large;
   }
-
+  h2{
+    margin-left: 6vw;
+  }
   button{
     border: none;
     background-color: rgb(0,128,128);
     margin: 0 0 0 -2vw;
   }
- 
+  .editLink{
+    margin-top: 7vh;
+  }
   .edit:visited,.edit:link{
     text-decoration: none;
     color: white;
-    font-size: large;
+    font-size: x-large;
   }
   .edit:hover{
     text-decoration: none;
     color: #eea47fff;
-    font-size: large;
+    font-size: x-large;
   }
   /* ------------- */
 

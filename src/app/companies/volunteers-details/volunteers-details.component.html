@@ -1,1 +1,10 @@
-<p>volunteers-details works!</p>
+<div class="volunteerDetails" *ngIf="volunteer">
+    <h1>Full Name : {{volunteer.fullName}}</h1>
+    <h3>Phone Number : +962 {{volunteer.phoneNumber}}</h3>
+    <h3>Email Address : {{volunteer.emailAddress}}</h3>
+    <h3>City : {{volunteer.city}} </h3>
+    <h3>Skills : {{volunteer.skills}} </h3>
+    <h3>Job Experiences : {{volunteer.jobExperiences}}</h3>
+    <h3>Courses :{{volunteer.Courses}}</h3>
+    <h3> Available Times : {{volunteer.availableTimes}}</h3>
+</div>

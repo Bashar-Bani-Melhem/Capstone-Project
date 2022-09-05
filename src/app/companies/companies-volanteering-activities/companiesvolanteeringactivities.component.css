@@ -44,6 +44,8 @@ body{
     padding: 0;
     /* min-height: 100vh; */
     background: rgb(0,128,128);
+    
+    
 
     /* justify-content: center; */
     /* align-items: center; */
@@ -75,6 +77,7 @@ body{
 }
 
 .container .card .face.face1{
+    margin-top:7vh ;
     position: relative;
     background: #eea47fff;
     display: flex;
@@ -112,6 +115,7 @@ body{
 }
 
 .container .card .face.face2{
+    margin-bottom: 10vh;
     position: relative;
     background: #fff;
     margin-left: 10px;
