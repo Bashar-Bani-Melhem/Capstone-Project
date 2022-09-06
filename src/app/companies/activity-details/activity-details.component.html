@@ -3,8 +3,8 @@
     <h1>Name : <span>{{activity.Name}}</span></h1>
     <h3>Description : <span>{{activity.Description}}</span></h3>
     <h3>Skills Required : <span>{{activity.SkillsRequired}}</span></h3>
-    <h3>Start Date : <span>{{activity.range.StartDate }}</span></h3>
-    <h3>EndDate : <span>{{activity.range.EndDate}}</span></h3>
+    <h3>Start Date : <span *ngIf="activity.range">{{activity.range.StartDate.toDate() | date:'yyyy/MM/dd'}}</span></h3>
+    <h3>EndDate : <span *ngIf="activity.range">{{activity.range.EndDate.toDate() | date:'yyyy/MM/dd'}}</span></h3>
     <h3>Number of technologists required : <span>{{activity.Numberoftechnologistsrequired ?? 0}}</span></h3>
 </div>
 <div class="applicants">

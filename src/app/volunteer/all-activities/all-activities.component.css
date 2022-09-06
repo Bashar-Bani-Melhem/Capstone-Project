@@ -1,44 +1,4 @@
-/* .activity{
-    border: 2px solid white;
-    padding: 3vw;
-    background-color: #eea47fff;
-    margin: 1rem;
-}
 
-.details:link{
-    text-decoration: none;
-    color: white;
-    border: 2px solid black;
-    background-color: black;
-    font-size: large;
-    padding: 2px;
-    border-radius: 50%;
-    padding: 15px;
-
-}
-.details:visited{
-    text-decoration: none;
-    color: white;
-    border: 2px solid black;
-    background-color: black;
-    font-size: large;
-    padding: 15px;
-}
-.details:hover{
-    text-decoration: none;
-    color: #eea47fff;
-    border: 2px solid black;
-    background-color: black;
-    font-size: large;
-    padding: 15px;
-    font-weight: bold;
-}
-.details_btn{
-    display: flex;
-    justify-content: flex-end;
-
-} */
-/* ---------------------------------------------------------------------------------------------------------- */
 body{
     margin: 0;
     padding: 0;

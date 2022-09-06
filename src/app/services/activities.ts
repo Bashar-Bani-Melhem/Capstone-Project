@@ -4,8 +4,8 @@ export interface Activity{
     Description:string,
     SkillsRequired:string[]|null|undefined, 
     range:{
-       StartDate?:Date|null|undefined,
-       EndDate?:Date|null|undefined, 
+       StartDate?:any|null|undefined,
+       EndDate?:any|null|undefined, 
     },
     Numberoftechnologistsrequired:number|null|undefined,
     companyId:string |undefined,
