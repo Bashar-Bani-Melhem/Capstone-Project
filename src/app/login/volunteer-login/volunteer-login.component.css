@@ -5,7 +5,7 @@ form{
     align-items: center;
     background-color: rgb(0,128,128);
     font-size: 1.1rem;
-    height: 110vh;
+    height: 78vh;
 }
 mat-form-field{
     width: 25rem;
@@ -28,4 +28,7 @@ mat-icon:hover{
 }
 .mat-input-elemant{
     color: white;
+}
+mat-form-field{
+    font-size: x-large;
 }

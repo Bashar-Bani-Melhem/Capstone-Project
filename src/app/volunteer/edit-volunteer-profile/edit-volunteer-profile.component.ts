@@ -35,13 +35,11 @@ export class EditVolunteerProfileComponent implements OnInit {
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
-    // Add our fruit
     if (value) {
       this.skills.push( value as string);
       console.log(this.skills);
     }
 
-    // Clear the input value
     event.chipInput!.clear();
   }
   remove(fruit: string): void {

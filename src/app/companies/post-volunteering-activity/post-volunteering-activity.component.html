@@ -3,7 +3,6 @@
     <h1>POST NEW ACTIVITY</h1>
     <div>
         
-        <!-- <input type="text" formControlName="Name" >  -->
         <mat-form-field MatFormControlName>
             <mat-label for="Name">Activity Name</mat-label>
             <input color="primary" matInput placeholder="Input" type="text" formControlName="Name">
@@ -17,7 +16,6 @@
         <textarea matNativeControl type="text" formControlName="Description"></textarea>
         <mat-error *ngIf="form.controls.Description.touched && form.controls.Description.invalid">The Input Is Invalid</mat-error>
         </mat-form-field>
-        <!-- <textarea type="text" formControlName="Description" ></textarea> -->
     </div>
     <div>
         <mat-form-field class="example-chip-list" appearance="fill">
@@ -51,13 +49,10 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>
           
-            <!-- <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
-            <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error> -->
           </mat-form-field>
     </div>
     <div>
         
-        <!-- <input type="number" formControlName="Numberoftechnologistsrequired" > -->
         <mat-form-field>
             <mat-label for="Numberoftechnologistsrequired">Number Of Technologists Required</mat-label>
             <input matInput type="number" placeholder="Input" formControlName="Numberoftechnologistsrequired">

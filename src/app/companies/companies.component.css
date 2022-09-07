@@ -1,22 +1,11 @@
-.companyHeader{
+nav{
     display: flex;
-    justify-content: center;
-    background-color: black;
+    margin-left: -50vw;
+    background-color: white;
+    
 }
-.companyHeaderBtn{
-    text-decoration: none;
-    color: white;
-    font-size: large;
-    margin: 1rem;
-}
-.companyHeaderBtn:active,.companyHeaderBtn:visited{
-    text-decoration: none;
-    color: white;
-    font-size: large;
-}
-.companyHeaderBtn:hover{
-    text-decoration: none;
-    color: #eea47fff;
-    font-size: large;
-    font-weight: bold;
+a{
+    
+    font-size: 1.1em;
+    
 }

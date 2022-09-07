@@ -1,10 +1,69 @@
 .homeContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    height: 90vh;
+    background:rgb(0,128,128) url("../../assets/images/TopVisual1.jpg") ;
+    background-attachment:fixed ;
+    background-blend-mode: soft-light;
+    background-size: contain;
+    scale: inherit;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  overflow: hidden;
+  
 }
 .volunteerImg{
-    height: 50vh;
+    height: 70vh;
     width: 70vw;
+}
+.websiteName1{
+    font-size: 4rem;
+    margin: 15vh 0 0 7vw;
+    color: white;
+    position: relative;
+    animation: myfirst 3s 1;
+    animation-direction: alternate;
+}
+@keyframes myfirst{
+    
+    0%  { left: -75px ; top: 0px; color: rgb(0,128,128);}
+    25%  { left: -75px ; top: 0px;}
+    50%  { left: 0px ; top: 0px;}
+    75%  { left: 0px ; top: 0px;}
+    100%  { left: 0px ; top: 0px;}
+    
+}
+.websiteName2{
+    font-size: 4rem;
+    margin: 7vh 0 0 27vw;
+    color: #eea47fff;
+    position: relative;
+    animation: myfirst 5s 1;
+    animation-direction: alternate;
+}
+.linking{
+    font-size: 1.5rem;
+    margin: 5vh 0 0 8vw;
+    color: white;
+    position: relative;
+    animation: myfirst 8s 1;
+    animation-direction: alternate;
+}
+.volunteering{
+    color: #eea47fff;
+    position: relative;
+    animation: myfirst 8s 1;
+    animation-direction: alternate;
+}
+.intro{
+    margin: 4vh 0 0 20vw;
+    font-size: 1.2rem;
+    position: relative;
+    animation: myfirst 10s 1;
+    animation-direction: alternate;
+    color: white;
+}
+.volunteering2{
+    color: #eea47fff;
+    position: relative;
+    animation: myfirst 10s 1;
+    animation-direction: alternate;
 }

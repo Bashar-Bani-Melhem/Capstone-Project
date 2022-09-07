@@ -2,7 +2,6 @@
     <h1>Edit Company Profile</h1>
     <div>
         
-        <!-- <input type="text" formControlName="Name" >  -->
         <mat-form-field MatFormControlName>
             <mat-label for="CompanyName">Company Name</mat-label>
             <input color="primary" matInput placeholder="Input" type="text" formControlName="CompanyName">
@@ -17,16 +16,10 @@
             <input type="number" matInput placeholder="77-7777-777" formControlName="PhoneNumber">
             <mat-error *ngIf="form.controls.PhoneNumber.touched && form.controls.PhoneNumber.invalid">The Input Is Invalid</mat-error>
           </mat-form-field>
-        <!-- <mat-form-field>
-        <mat-label for="PhoneNumber">Phone Number</mat-label>
-            <input matInput placeholder="Input" type="number" formControlName="PhoneNumber">
-            <mat-error *ngIf="form.controls.PhoneNumber.touched && form.controls.PhoneNumber.invalid">The Input Is Invalid</mat-error>
-          </mat-form-field> -->
-        <!-- <input type="text" formControlName="SkillsRequired" > -->
+        
     </div>
     <div>
-        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
-        <!-- <input type="text" formControlName="EndDate" > -->
+       
         <mat-form-field>
             <mat-label for="Logo">Company Logo URL</mat-label>
             <input matInput placeholder="Input" type="text" formControlName="Logo">
@@ -43,16 +36,10 @@
             <option value="Religious">Religious</option>
           </select>
         </mat-form-field>
-        <!-- <input type="number" formControlName="Numberoftechnologistsrequired" > -->
-        <!-- <mat-form-field>
-            <mat-label for="Type">Enter Your Company Type:</mat-label>
-            <input matInput type="text" placeholder="Input" formControlName="Type">
-            <mat-error *ngIf="form.controls.Type.touched && form.controls.Type.invalid">The Input Is Invalid</mat-error>
-          </mat-form-field> -->
+        
     </div>
     <div>
-        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
-        <!-- <input type="text" formControlName="EndDate" > -->
+        
         <mat-form-field>
             <mat-label for="WebsiteURL">Company Website URL</mat-label>
             <input matInput placeholder="Input" type="text" formControlName="WebsiteURL">

@@ -1,48 +1,4 @@
-/* 
-main{
-    background-color:rgb(0,128,128) ;
-}
-.contactUs{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    align-items: center;
-    
-   
-}
-label{
-    color: #eea47fff;
-    font-size: x-large;
-    font-weight: bold;
-    
-}
-input{
-    height: 1.5rem;
-    width: 20rem;
-    font-size: medium;
-    display: inline-flex;
-    margin-bottom: 1rem;
-    border: 1.5px solid black;
-}
-.massage{
-    width: 20rem;
-    height: 9rem;
-    border: 1.5px solid black;
-}
-.submitbtn{
-    width: 20rem;
-    margin: 2rem;
-    background-color: black;
-    color: white;
-    font-size: large;
-}
-.submitbtn:hover,.submitbtn:active{
-    color: #eea47fff;
-    font-weight: bold;
-}
-h1{
-    padding: 15px;
-} */
+
 form{
     display: flex;
     flex-direction: column;
@@ -73,4 +29,7 @@ mat-icon:hover{
 }
 .mat-input-elemant{
     color: white;
+}
+mat-form-field{
+    font-size: x-large;
 }

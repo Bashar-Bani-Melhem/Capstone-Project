@@ -29,3 +29,6 @@ mat-icon:hover{
 .mat-input-elemant{
     color: white;
 }
+mat-form-field{
+    font-size: x-large;
+}

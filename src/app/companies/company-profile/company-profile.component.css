@@ -1,10 +1,6 @@
-
-
   .container{
     user-select: none;
-    /* margin: 1px auto; */
     background: rgb(0,128,128);
-    /* color: #b3b8cd; */
     border-radius: 5px;
     width: 100%;
     height: 80vh;
@@ -12,7 +8,6 @@
     box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
   }
   .cover-photo{
-    /* background-color: #eea47fff; */
     height: 5px;
     width: 100%;
     border-radius: 5px 5px 0 0;
@@ -73,6 +68,6 @@
     color: #eea47fff;
     font-size: x-large;
   }
-  /* ------------- */
+  
 
   

@@ -1,23 +1,11 @@
-.registerHeader{
+nav{
     display: flex;
-    justify-content: center;
-    background-color: black;
+    margin-left: -50vw;
+    background-color: white;
+    
 }
-.registerBtn{
-    text-decoration: none;
-    color: white;
-    font-size: large;
-    margin: 1rem;
-    margin-left: 6vw;
-}
-.registerBtn:active,.registerBtn:visited{
-    text-decoration: none;
-    color: white;
-    font-size: large;
-}
-.registerBtn:hover{
-    text-decoration: none;
-    color: #eea47fff;
-    font-size: large;
-    font-weight: bold;
+a{
+    
+    font-size: 1.1em;
+    
 }

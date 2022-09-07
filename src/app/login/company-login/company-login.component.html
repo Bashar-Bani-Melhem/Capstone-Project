@@ -18,7 +18,6 @@
         <mat-error *ngIf="password?.errors?.['required']">Password Is Required</mat-error>
         <mat-error *ngIf="password?.errors?.['minlength']">Password Must Be At Least 8 Characters</mat-error>
         </mat-form-field>
-        <!-- <textarea type="text" formControlName="Description" ></textarea> -->
     </div>
     <mat-error *ngIf="formStatus">
         {{formStatus}}

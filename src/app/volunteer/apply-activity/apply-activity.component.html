@@ -1,10 +1,27 @@
-<div *ngIf="activity"  class="activityDetails">
-    <h1>Name : <span>{{activity.Name}}</span></h1>
-     <h3>Description : <span>{{activity.Description}}</span></h3>
-     <h3>Skills Required : <span>{{activity.SkillsRequired}}</span></h3>
-     <h3>Start Date : <span *ngIf="activity.range">{{activity.range.StartDate.toDate() | date:'yyyy/MM/dd'}}</span></h3>
-     <h3>EndDate : <span *ngIf="activity.range">{{activity.range.EndDate.toDate() | date:'yyyy/MM/dd'}}</span></h3>
-     <h3>Number of technologists required : <span>{{activity.Numberoftechnologistsrequired ?? 0}}</span></h3>
-     <h3>Company Name :<span> {{activity.companyName}}</span></h3>
-     <a class="about"  routerLink="/volunteer/allCompanies/{{activity.companyId}}">Read More About Company</a>
- </div>
+
+ <div class="body" >
+    <div class="page" >
+       <div class="card" *ngIf="activity">
+         <div class="container">
+           
+           <div class="content">
+             <div class="text">
+               <h1>{{activity.Name}}</h1>
+               <h2>Start Date : <span *ngIf="activity.range">{{activity.range.StartDate.toDate() | date:'yyyy/MM/dd'}}</span></h2>
+                <h2>EndDate : <span *ngIf="activity.range">{{activity.range.EndDate.toDate() | date:'yyyy/MM/dd'}}</span></h2>
+                <h2>Company Name :<span> {{activity.companyName}}</span></h2>
+                <a class="about"  routerLink="/volunteer/allCompanies/{{activity.companyId}}">Read More About Company</a>
+             </div>  
+           </div>
+         </div>
+         <div class="contact">
+           <h3>Number of technologists required : <span>{{activity.Numberoftechnologistsrequired ?? 0}}</span></h3>
+           <h3>Skills Required : <span>{{activity.SkillsRequired}}</span></h3>
+           <h3>Description : </h3>
+           <div class="description">
+           <p>{{activity.Description}}</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>

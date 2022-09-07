@@ -1,13 +1,4 @@
-<!-- <div class="activity" *ngFor="let activity of activities">   
-        <h1>Activity Name : <span>{{activity.Name}}</span></h1>
-        <h3>Requirment Skills : <span>{{activity.SkillsRequired}}</span></h3>
-        <h3>Start Date : <span>{{activity.StartDate}}</span></h3>
-        <h3>End Date : <span>{{activity.EndDate}}</span></h3>
-        <div class="details_btn">
-        <a class="details" routerLink="/companies/companyActivities/{{activity.id}}">Details</a>
-        </div>
-</div> -->
-<!-- --------------------------------------------------------------------------------- -->
+
 <body>
         <div class="container" *ngIf="activityService.currentUserActivities$ | async as activities">
             <div class="card" *ngFor="let activity of activities">

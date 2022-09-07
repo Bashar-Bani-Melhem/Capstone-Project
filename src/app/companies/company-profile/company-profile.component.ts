@@ -12,7 +12,6 @@ import { PictureUploadService } from 'src/app/services/picture-upload.service';
   styleUrls: ['./company-profile.component.css']
 })
 export class CompanyProfileComponent implements OnInit {
-  // company?:Company
   CompanyName?:string
   Type?:string
   EmailAddress?:string

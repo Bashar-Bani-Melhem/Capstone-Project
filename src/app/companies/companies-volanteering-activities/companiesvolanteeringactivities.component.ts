@@ -9,13 +9,9 @@ import { ActivitiesService } from 'src/app/services/activities.service';
   styleUrls: ['./companiesvolanteeringactivities.component.css']
 })
 export class CompaniesvolanteeringactivitiesComponent implements OnInit {
-  // activities:Observable<Activity[]>;
+  
   constructor(public activityService:ActivitiesService) { 
-  //    this.activityService.userState$.subscribe((activity)=>{
-  //     if(activity){
-  //       this.activities=this.activityService.getAll()
-  //     }
-  //    })
+  
   }
 
   ngOnInit(): void {

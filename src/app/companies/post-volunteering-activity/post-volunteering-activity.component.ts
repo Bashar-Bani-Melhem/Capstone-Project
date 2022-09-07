@@ -58,30 +58,7 @@ export class PostVolunteeringActivityComponent implements OnInit {
           this.navgateToProfilePage();
   
           }  });
-    //  this.auth.userState$.pipe(take(1)).subscribe((user)=>{
-    //   if(user){
-    //     this.activityService.create({
-    //       Name:this.form.value.Name+'',
-    //       companyId: user.uid,
-    //       Description:this.form.value.Description+'',
-    //       SkillsRequired:this.skills,
-    //       Numberoftechnologistsrequired:this.form.value.Numberoftechnologistsrequired,
-    //       range:{... this.form.value.range},
-    //     })
-    //     .pipe(this.hot.observe({
-    //   loading: 'Creating Volunteering Activity...',
-    //   success:'Successfully Cerated',
-    //   error:(error)=>'This Error Happend'+error
-    // })).subscribe({
-    //     next:()=>{
-    //       console.log('created Dooooneeeeeeeee')
-    //     this.navgateToProfilePage();
-
-    //     }  });
-    //   }
-    // })
-    // 
-    // )
+   
     
 
      
@@ -96,13 +73,11 @@ export class PostVolunteeringActivityComponent implements OnInit {
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
-    // Add our fruit
     if (value) {
       this.skills.push( value as string);
       console.log(this.skills);
     }
 
-    // Clear the input value
     event.chipInput!.clear();
   }
 
@@ -114,7 +89,4 @@ export class PostVolunteeringActivityComponent implements OnInit {
     }
   }
 }
-    // console.log(this.form);
-    // console.log(this.form.value);
-    // this.activityService.addActivity(this.form.value as unknown as activity)
-    // this.router.navigate(['/companies/companyActivities'])
+    

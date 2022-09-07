@@ -2,7 +2,7 @@
     <h1>REGISTER AS VOLUNTEER</h1>
     <div>
         
-        <!-- <input type="text" formControlName="Name" >  -->
+      
         <mat-form-field MatFormControlName>
             <mat-label for="fullName">Full Name</mat-label>
             <input color="primary" matInput placeholder="Input" type="text" formControlName="fullName">
@@ -15,7 +15,7 @@
         <input color="primary" matInput placeholder="Input" type="text" formControlName="emailAddress">
         <mat-error *ngIf="form.controls.emailAddress.touched && form.controls.emailAddress.invalid">The Input Is Invalid</mat-error>
         </mat-form-field>
-        <!-- <textarea type="text" formControlName="Description" ></textarea> -->
+        
     </div>
     <div>
         <mat-form-field class="example-full-width" appearance="fill">
@@ -24,12 +24,7 @@
             <input type="number" matInput placeholder="77-7777-777" formControlName="phoneNumber">
             <mat-error *ngIf="form.controls.phoneNumber.touched && form.controls.phoneNumber.invalid">The Input Is Invalid</mat-error>
           </mat-form-field>
-        <!-- <mat-form-field>
-        <mat-label for="PhoneNumber">Phone Number</mat-label>
-            <input matInput placeholder="Input" type="number" formControlName="PhoneNumber">
-            <mat-error *ngIf="form.controls.PhoneNumber.touched && form.controls.PhoneNumber.invalid">The Input Is Invalid</mat-error>
-          </mat-form-field> -->
-        <!-- <input type="text" formControlName="SkillsRequired" > -->
+        
     </div>
     <div>
         
@@ -39,7 +34,7 @@
             <mat-error *ngIf="form.controls.password.touched && form.controls.password.invalid">The Input Is Invalid</mat-error>
           </mat-form-field>
           
-        <!-- <input type="text" formControlName="StartDate" > -->
+        
     </div>
     <div>
         
@@ -49,7 +44,7 @@
             <mat-error *ngIf="form.controls.confirmPassword.touched && form.controls.confirmPassword.invalid">The Input Is Invalid</mat-error>
           </mat-form-field>
           
-        <!-- <input type="text" formControlName="StartDate" > -->
+       
     </div>
     <div>
         <h4>Select Your City</h4>
@@ -99,8 +94,7 @@
 
 
         <div>
-        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
-        <!-- <input type="text" formControlName="EndDate" > -->
+        
         <mat-form-field>
             <mat-label for="jobExperiences">Job Experiences</mat-label>
             <input matInput placeholder="Input" type="text" formControlName="jobExperiences">
@@ -108,16 +102,10 @@
           </mat-form-field>
     </div>
     
-        <!-- <input type="number" formControlName="Numberoftechnologistsrequired" > -->
-        <!-- <mat-form-field>
-            <mat-label for="Type">Enter Your Company Type:</mat-label>
-            <input matInput type="text" placeholder="Input" formControlName="Type">
-            <mat-error *ngIf="form.controls.Type.touched && form.controls.Type.invalid">The Input Is Invalid</mat-error>
-          </mat-form-field> -->
+        
     
     <div>
-        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
-        <!-- <input type="text" formControlName="EndDate" > -->
+       
         <mat-form-field>
             <mat-label for="Courses">Courses</mat-label>
             <input matInput placeholder="Input" type="text" formControlName="Courses">
@@ -125,8 +113,7 @@
           </mat-form-field>
     </div>
     <div>
-        <!-- <mat-label for="EndDate">Activity End Date</mat-label> -->
-        <!-- <input type="text" formControlName="EndDate" > -->
+        
         <mat-form-field>
             <mat-label for=" availableTimes"> Available times</mat-label>
             <input matInput placeholder="Input" type="text" formControlName="availableTimes">

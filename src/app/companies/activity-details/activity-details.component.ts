@@ -12,10 +12,7 @@ export class ActivityDetailsComponent implements OnInit {
   activity?: Activity;
   constructor(public activityService: ActivitiesService, private route:ActivatedRoute ) {
      
-    // this.activity= activityService.getAll().subscribe()
-    // filter((value,index)=>{
-    //   return value.id == id;
-    // })[0];
+    
    }
 
    ngOnInit(): void {

@@ -2,7 +2,6 @@
     <h1>LOGIN AS VOLUNTEER</h1>
     <div>
         
-        <!-- <input type="text" formControlName="Name" >  -->
         <mat-form-field MatFormControlName>
             <mat-label for="email">ENTER YOUR EMAIL</mat-label>
             <input color="primary" matInput placeholder="Input" type="text" formControlName="email">
@@ -18,7 +17,6 @@
         <mat-error *ngIf="password?.errors?.['required']">Password Is Required</mat-error>
         <mat-error *ngIf="password?.errors?.['minlength']">Password Must Be At Least 8 Characters</mat-error>
         </mat-form-field>
-        <!-- <textarea type="text" formControlName="Description" ></textarea> -->
     </div>
     <mat-error *ngIf="formStatus">
         {{formStatus}}

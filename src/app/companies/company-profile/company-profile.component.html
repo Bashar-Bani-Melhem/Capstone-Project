@@ -1,5 +1,4 @@
-<!-- companyserves.userState$ | async as  -->
-<!-- *ngIf="companyserves.userState$ | async as company" -->
+
   <div class="container" *ngIf="companyserves.userState$ | async as company">
     
         <h1 class="welcome-statment">Welcome to {{CompanyName}} company Profile</h1> 
@@ -29,23 +28,5 @@
       <a routerLink="../editProfile" class="edit">Edit Profile</a>
     </div>
   </div>
-  <!-- <mat-card class="example-card" *ngIf="companyserves.userState$ | async as company">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card> -->
+  
   
