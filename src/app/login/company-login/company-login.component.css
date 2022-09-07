@@ -1,9 +1,22 @@
+.page{
+    display: flex;
+    background-color: #ebecf0;
+    align-items: center;
+    justify-content: space-between;
+}
+.hraders{
+    margin-left: 5vw;
+}
+.hreader2{
+   margin-left: 5vw;
+   color: #eea47fff ;
+}
 form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0,128,128);
+    background-color: #ebecf0;
     font-size: 1.1rem;
     height: 78vh;
 }
@@ -15,7 +28,7 @@ button{
     align-self: flex-end;
     padding-right: 10vw;
     border: none;
-    background-color: rgb(0,128,128);
+    background-color: #ebecf0;
     
 }
 mat-icon{
@@ -31,4 +44,7 @@ mat-icon:hover{
 }
 mat-form-field{
     font-size: x-large;
+}
+.logo{
+    font-size: 6rem;
 }

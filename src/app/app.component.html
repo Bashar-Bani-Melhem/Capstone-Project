@@ -2,17 +2,21 @@
   <div class="item item1"><a routerLink="/"><img class="logo" src="../assets/images/logo1.png"></a></div>
   <div class="item item2">
       <ul>
-          <li><a class="about" routerLink="/about">About us</a></li>
-          <li><a class="why" routerLink="/contact">Contact us</a></li>
-          <li><a class="opp" routerLink="/successStories">Success stories</a></li>
+          <li><a class="about" routerLink="/about">About us <mat-icon>info</mat-icon></a></li>
+          <li><a class="why" routerLink="/contact">Contact us <mat-icon>contact_support
+          </mat-icon></a></li>
+          <li><a class="opp" routerLink="/successStories">Success stories <mat-icon>celebration
+
+          </mat-icon></a></li>
       </ul>
   </div>
   <div class="item item3">
      
-    <a class="logoutBtn" *ngIf="authService.userState$ | async;else loginBtn" (click)="logout()">Log Out</a> 
+    <a class="logoutBtn" *ngIf="authService.userState$ | async;else loginBtn" (click)="logout()">Log Out <mat-icon>logout</mat-icon></a> 
     <ng-template #loginBtn>
-    <a routerLink="login" class="loginBtn">Log In</a>
-    <a routerLink="register" class="signupBtn">Sign Up</a>
+    <a routerLink="login" class="loginBtn">Log In <mat-icon>login</mat-icon></a>
+    <a routerLink="register" class="signupBtn">Sign Up <mat-icon>app_registration
+    </mat-icon></a>
     </ng-template>
     
     

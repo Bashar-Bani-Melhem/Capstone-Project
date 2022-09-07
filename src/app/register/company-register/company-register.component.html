@@ -1,5 +1,6 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1><mat-icon class="logo">apartment</mat-icon></h1>
     <h1>REGISTER AS COMPANY</h1>
     <div>
         
@@ -75,5 +76,5 @@
     <mat-error *ngIf="form.errors?.['passwoedDontMatch']">
         Confirm Password Dont Match Entered Password
     </mat-error>
-    <button type="submit"><mat-icon>send</mat-icon></button>
+    <button type="submit" [disabled]="form.invalid"><mat-icon>send</mat-icon></button>
 </form>

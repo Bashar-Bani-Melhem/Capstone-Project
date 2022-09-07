@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0,128,128);
+    background-color: #ebecf0;
 }
 .page {
     width: 100vh;
@@ -18,7 +18,7 @@
     width: 100vw;
     height: 50vh;
     background-color: #eea47fff;
-    box-shadow: 0px 50px 100px rgba(0, 0, 0, .4);
+    box-shadow: 0px 50px 100px rgba(0, 128, 128, .4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +70,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0,128,128);
+    background-color: #ebecf0;
   }
   .applicants-list{
     background-color: white;

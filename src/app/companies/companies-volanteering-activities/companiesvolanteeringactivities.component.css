@@ -2,7 +2,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: rgb(0,128,128);
+    background: #ebecf0;
 }
 
 .container{
@@ -26,7 +26,6 @@ body{
 }
 
 .container .card .face.face1{
-    margin-top:7vh ;
     position: relative;
     background: #eea47fff;
     display: flex;
@@ -63,7 +62,6 @@ body{
 }
 
 .container .card .face.face2{
-    margin-bottom: 10vh;
     position: relative;
     background: #fff;
     margin-left: 10px;
@@ -72,7 +70,7 @@ body{
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 50px rgba(0, 128, 128, 0.4);
     transform: translateY(-100px);
 }
 

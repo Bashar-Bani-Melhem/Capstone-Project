@@ -91,5 +91,5 @@
             <mat-error *ngIf="form.controls.availableTimes.touched && form.controls.availableTimes.invalid">The Input Is Invalid</mat-error>
           </mat-form-field>
     </div>
-    <button type="submit"><mat-icon>send</mat-icon></button>
+    <button type="submit" [disabled]="form.invalid"><mat-icon>send</mat-icon></button>
 </form>

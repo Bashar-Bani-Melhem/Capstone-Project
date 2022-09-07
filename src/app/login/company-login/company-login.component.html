@@ -1,4 +1,8 @@
+
+
 <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    
+    <h1><mat-icon class="logo">apartment</mat-icon></h1>
     <h1>LOGIN AS COMPANY</h1>
     <div>
         
@@ -23,4 +27,6 @@
         {{formStatus}}
     </mat-error>
     <button type="submit" [disabled]="loginForm.invalid"><mat-icon>send</mat-icon></button>
+
 </form>
+
