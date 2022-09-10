@@ -24,7 +24,6 @@ export class CompanyRegisterComponent implements OnInit {
     PhoneNumber:this.fb.control(0,Validators.required),
     Password:this.fb.control('',[Validators.required,Validators.minLength(8)]),
     confirmPassword:this.fb.control('',[Validators.required,Validators.minLength(8)]),
-    Logo:this.fb.control('',Validators.required),
     Type:this.fb.control('',Validators.required),
     WebsiteURL:this.fb.control('',Validators.required),
   },{validators: this.passwordMatchingValidator()})
@@ -40,7 +39,6 @@ export class CompanyRegisterComponent implements OnInit {
             id:data.user?.uid+'',
             EmailAddress:data.user?.email+'',
             Password:this.form.value.Password+'',
-            Logo:this.form.value.Logo+'',
             CompanyName:this.form.value.CompanyName+'',
             PhoneNumber:this.form.value.PhoneNumber,
             Type:this.form.value.Type+'',

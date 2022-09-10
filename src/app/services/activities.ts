@@ -11,4 +11,5 @@ export interface Activity{
     companyId:string |undefined,
     companyName?:string,
     companyType?:string,
+    logo:string | null | undefined,
 }

@@ -22,7 +22,7 @@ body{
 
 .container .card .face{
     
-    width: 300px;
+    width: 400px;
     height: 200px;
     transition: 0.5s;
 }
@@ -98,4 +98,10 @@ body{
 .container .card .face.face2 .content a:hover{
     background: black;
     color: #fff;
+}
+img{
+    border-radius: 20%;
+    height: 75px;
+    width: 75px;
+    margin-left: -6vw;
 }

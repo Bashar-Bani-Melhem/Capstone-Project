@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Activity } from 'src/app/services/activities';
 import { ActivitiesService } from 'src/app/services/activities.service';
+import { applicant } from 'src/app/services/applicant';
 
 @Component({
   selector: 'app-activity-details',
@@ -20,6 +21,7 @@ export class ActivityDetailsComponent implements OnInit {
     this.activityService.get(id).subscribe((actvitiy)=> {
       this.activity = actvitiy;
     })
+    
    }
 
 }

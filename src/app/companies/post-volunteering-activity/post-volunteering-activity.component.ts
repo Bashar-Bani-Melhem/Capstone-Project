@@ -37,10 +37,12 @@ export class PostVolunteeringActivityComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    this.companyService.userState$.pipe(take(1),switchMap((data)=>{
+    this.auth.userState$.pipe(take(1)).subscribe((log)=>{
+       this.companyService.userState$.pipe(take(1),switchMap((data)=>{
       return this.activityService.create({
         Name:this.form.value.Name+'',
         companyId: data?.id,
+        logo:log?.photoURL,
         companyName:data?.CompanyName,
         companyType:data?.Type,
         Description:this.form.value.Description+'',
@@ -58,6 +60,8 @@ export class PostVolunteeringActivityComponent implements OnInit {
           this.navgateToProfilePage();
   
           }  });
+    })
+   
    
     
 

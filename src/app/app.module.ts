@@ -25,6 +25,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatTableModule} from '@angular/material/table';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -54,6 +55,7 @@ import { EditVolunteerProfileComponent } from './volunteer/edit-volunteer-profil
 import { MatNativeDateModule } from '@angular/material/core';
 import { ApplyActivityComponent } from './volunteer/apply-activity/apply-activity.component';
 import { PastActivitiesComponent } from './volunteer/past-activities/past-activities.component';
+import { ApplicantViewComponent } from './companies/applicant-view/applicant-view.component';
 // import { HttpClientModule } from '@angular/common/http';
 const routes : Route[]=[
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -65,6 +67,7 @@ const routes : Route[]=[
     {path:'',redirectTo:'companyProfile',pathMatch:'full'},
     {path:'companyActivities', component:CompaniesvolanteeringactivitiesComponent},
     {path:'companyActivities/:id', component: ActivityDetailsComponent},
+    {path:'applicantView/:id',component:ApplicantViewComponent},
     {path:'companyProfile',component:CompanyProfileComponent},
     {path:'postNewActivity',component:PostVolunteeringActivityComponent},
     {path:'allVolunteers',component:AllVolunteersComponent},
@@ -77,6 +80,7 @@ const routes : Route[]=[
     {path:'allCompanies',component:AllCompaniesComponent},
     {path:'allCompanies/:id', component: CompanyDetailsComponent},
     {path:'allActivities',component:AllActivitiesComponent},
+    
     {path:'editProfile',component:EditVolunteerProfileComponent},
     {path:'allActivities/:id',component:ApplyActivityComponent},
     {path:'pastActivity',component:PastActivitiesComponent}
@@ -122,6 +126,7 @@ const routes : Route[]=[
     EditVolunteerProfileComponent,
     ApplyActivityComponent,
     PastActivitiesComponent,
+    ApplicantViewComponent,
     
   ],
   imports: [
@@ -134,6 +139,7 @@ const routes : Route[]=[
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule,
     
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),

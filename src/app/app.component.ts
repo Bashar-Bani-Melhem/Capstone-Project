@@ -17,4 +17,10 @@ export class AppComponent {
       this.router.navigate(['home'])
     });
   }
+  cprofile(){
+    this.router.navigate(['companies'])
+  }
+  vprofile(){
+    this.router.navigate(['volunteer'])
+  }
 }

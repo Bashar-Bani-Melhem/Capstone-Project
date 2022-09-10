@@ -13,6 +13,10 @@
   <div class="item item3">
      
     <a class="logoutBtn" *ngIf="authService.userState$ | async;else loginBtn" (click)="logout()">Log Out <mat-icon>logout</mat-icon></a> 
+    <a class="proBtn" *ngIf="authService.userState$ | async" (click)="cprofile()">Company Profile</a> 
+    <a class="proBtn" *ngIf="authService.userState$ | async" (click)="vprofile()">Volunteer Profile</a> 
+
+
     <ng-template #loginBtn>
     <a routerLink="login" class="loginBtn">Log In <mat-icon>login</mat-icon></a>
     <a routerLink="register" class="signupBtn">Sign Up <mat-icon>app_registration

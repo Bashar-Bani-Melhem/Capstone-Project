@@ -3,7 +3,6 @@ export interface Company{
     EmailAddress:string,
     Password?:string,
     confirmPassword?:string
-    Logo:string, 
     CompanyName:string,
     PhoneNumber?:number |undefined|null,
     Type:string,

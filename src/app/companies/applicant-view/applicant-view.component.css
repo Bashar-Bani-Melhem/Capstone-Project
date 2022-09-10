@@ -1,47 +1,24 @@
 
-
-.about:link{
-    text-decoration: none;
-    color: white;
-    font-size: large;
-}
-.about:visited{
-    text-decoration: none;
-    color: white;
-    font-size: large;
-}
-.about:hover{
-    text-decoration: none;
-    color: rgb(0,128,128);
-    font-size: large;
-    cursor: pointer;
-}
-.body{
+/* .body{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ebecf0;
 }
 .page {
-    width: 140vh;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     
-  }
-  .apply{
-    width: 140vh;
-    height: 100vh;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
   }
   
   .card {
-    width: 100vw;
-    height: 60vh;
+    width: 60vw;
+    height: 25vh;
     background-color: #eea47fff;
     box-shadow: 0px 50px 100px rgba(0, 128, 128, .4);
     display: flex;
@@ -68,8 +45,9 @@
   }
   
   .content .text {
-    margin-bottom: 50px;
-  }
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
   
   .text h1 {
     font-size: 2.5em;
@@ -80,30 +58,43 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     background-color:white;
   }
-  h3{
-    margin-left: 25px;
+  button{
+    margin: 15px 15px 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
   }
-  .description p{
-    margin-left: 25px;
-    
+  button:hover{
+    background: black;
+    color: #fff;
+  } */
+  table {
+    width: 100%;
+  }
+  th,td{
+    font-size: large;
   }
   button{
-    margin-left: 18vw;
-    background-color: white;
-    border: none;
-    
-  }
-  input{
-    font-size: large;
-  }
-  mat-form-field{
-    width: 21vw;
-    
-  }
-  mat-label{
-    font-size: large;
-  }
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+}
+button:hover{
+    background: green;
+    color: #fff;
+}
+img{
+  border-radius: 50%;
+  height:75px ;
+  width:75px ;
+}

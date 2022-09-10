@@ -8,7 +8,7 @@
                
                <div class="content">
                  <div class="text">
-                   <h1>{{activity.Name}}</h1>
+                   <h2>{{activity.Name}}</h2>
                    <h2>Start Date : <span *ngIf="activity.range">{{activity.range.StartDate.toDate() | date:'yyyy/MM/dd'}}</span></h2>
                     <h2>EndDate : <span *ngIf="activity.range">{{activity.range.EndDate.toDate() | date:'yyyy/MM/dd'}}</span></h2>
                  </div>  
@@ -26,12 +26,12 @@
          </div>
          
        </div>
-       <div class="applicants">
-        <div class="applicants-list">
-           <h1>Applicants :</h1>     
+       <!-- <div class="applicants">
+        <div class="applicants-list" *ngFor="let applicant of applicants">
+           <h1>Applicant Name :{{ applicant.applicantName }}</h1>     
         </div>
         
-</div>
+</div> -->
         
 
    

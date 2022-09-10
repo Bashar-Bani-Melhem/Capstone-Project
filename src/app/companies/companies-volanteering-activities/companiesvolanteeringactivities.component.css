@@ -20,7 +20,7 @@ body{
 
 .container .card .face{
     
-    width: 300px;
+    width: 400px;
     height: 200px;
     transition: 0.5s;
 }
@@ -84,7 +84,7 @@ body{
 }
 
 .container .card .face.face2 .content a{
-    margin: 15px 0 0;
+    margin: 15px 15px 0;
     display:  inline-block;
     text-decoration: none;
     font-weight: 900;

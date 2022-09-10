@@ -40,7 +40,7 @@ export class CompanyProfileComponent implements OnInit {
   submit(event:Event){
     const input = <HTMLInputElement> event.target;
     const obj= input?.files?.[0] as File;
-    this.uploadService.uploadImage(obj).subscribe()
+    this.uploadService.uploadImage(obj).pipe().subscribe()
   }
 
 }

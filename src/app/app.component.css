@@ -19,6 +19,23 @@
 .item2 ul li{
     margin:2vw;
 }
+.proBtn{
+    color: white;
+}
+.proBtn:link{
+    text-decoration: none;
+    color: white;
+}
+.proBtn:visited{
+    text-decoration: none;
+    color: white;
+}
+.proBtn:hover{
+    text-decoration: none;
+    color: #eea47fff;
+    cursor: pointer;
+
+}
 .about:link,.why:link,.opp:link,.loginBtn:link,.signupBtn:link,.logoutBtn:link{
     text-decoration: none;
     color: white;

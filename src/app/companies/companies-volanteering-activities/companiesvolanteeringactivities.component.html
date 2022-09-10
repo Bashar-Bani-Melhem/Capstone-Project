@@ -12,7 +12,7 @@
                         <p>Requirment Skills : {{activity.SkillsRequired}}</p>
                         <p *ngIf="activity.range">Start Date : {{activity.range.StartDate.toDate() | date:'yyyy/MM/dd'}}</p>
                         <p *ngIf="activity.range">End Date : {{activity.range.EndDate.toDate() | date:'yyyy/MM/dd'}}</p>
-                        
+                        <a  routerLink="/companies/applicantView/{{activity.uid}}">View Applicant</a>
                         <a  routerLink="/companies/companyActivities/{{activity.uid}}">Read More</a>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 
-body{
+/* body{
     margin: 0;
     padding: 0;
     background: #ebecf0;
@@ -23,7 +23,7 @@ body{
 
 .container .card .face{
     
-    width: 300px;
+    width: 400px;
     height: 200px;
     transition: 0.5s;
 }
@@ -99,4 +99,27 @@ body{
 .container .card .face.face2 .content a:hover{
     background: black;
     color: #fff;
+} */
+a{
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
 }
+a:hover{
+    background: #eea47fff;
+    color: #fff;
+}
+table {
+    width: 100%;
+  }
+  th,td{
+    font-size: large;
+  }
+  mat-form-field{
+    width: 100%;
+    font-size: large;
+    margin-left: 25px;
+  }

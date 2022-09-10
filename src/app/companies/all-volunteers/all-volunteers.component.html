@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <div class="container" >
         <div class="card" *ngFor="let volunteer of volunteers">
             <div class="face face1">
@@ -16,4 +16,40 @@
         </div>
        
     </div>
-</body>
+</body> -->
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+  </mat-form-field>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+          <!-- ['fullName', 'skills', 'city', 'readMore']; -->
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef> Volunteer Name </th>
+      <td mat-cell *matCellDef="let volunteer"> {{volunteer.fullName}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="skills">
+      <th mat-header-cell *matHeaderCellDef> Volunteer Skills  </th>
+      <td mat-cell *matCellDef="let volunteer"> {{volunteer.skills}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> Volunteer City </th>
+      <td mat-cell *matCellDef="let volunteer"> {{volunteer.city}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="readMore">
+      <th mat-header-cell *matHeaderCellDef> More Information </th>
+      <td mat-cell *matCellDef="let volunteer"> <a  routerLink="/companies/allVolunteers/{{volunteer.id}}">Read More</a> </td>
+    </ng-container>
+    
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

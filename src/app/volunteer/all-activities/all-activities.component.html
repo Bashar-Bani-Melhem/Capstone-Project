@@ -3,7 +3,10 @@
         <div class="card" *ngFor="let activity of Activities">
             <div class="face face1">
                 <div class="content">
-                    <h3>{{activity.Name}}</h3>
+                    <img [src]='activity.logo'>
+                    <h2>{{activity.Name}}</h2>
+                    <h2>Company Name :<span> {{activity.companyName}}</span></h2>
+                    
                 </div>
             </div>
             <div class="face face2">
@@ -11,7 +14,7 @@
                     <p>Requirment Skills : {{activity.SkillsRequired}}</p>
                     <p *ngIf="activity.range">Start Date : {{activity.range.StartDate.toDate() | date: 'yyyy-MM-dd'}}</p>
                     <p *ngIf="activity.range">End Date : {{activity.range.EndDate.toDate() | date: 'yyyy-MM-dd'}}</p>
-                    <p>Company Name : {{activity.companyName}}</p>
+                    
                     <a  routerLink="/volunteer/allActivities/{{activity.uid}}">Read More</a>
                 </div>
             </div>
